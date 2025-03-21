@@ -1,0 +1,373 @@
+17:35:18:228  INFO 29821 --- [item-service] [main] c.f.itemservice.ItemServiceApplication   : Starting ItemServiceApplication using Java 17.0.14 with PID 29821 (/home/forevercode/projects/hmall/hmall/item-service/target/classes started by forevercode in /home/forevercode/projects/hmall/hmall)
+17:35:18:230  INFO 29821 --- [item-service] [main] c.f.itemservice.ItemServiceApplication   : The following 1 profile is active: "dev"
+17:35:18:954  WARN 29821 --- [item-service] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration.mbeanExporter
+17:35:18:961  INFO 29821 --- [item-service] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+17:35:18:979 ERROR 29821 --- [item-service] [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration.mbeanExporter
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:99) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:184) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:145) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:121) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:430) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.4.3.jar:3.4.3]
+	at com.ffforever.itemservice.ItemServiceApplication.main(ItemServiceApplication.java:12) ~[classes/:na]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.github.xiaoymin.knife4j.spring.configuration.Knife4jAutoConfiguration] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@1dbd16a6]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-6.2.3.jar:6.2.3]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:360) ~[spring-core-6.2.3.jar:6.2.3]
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:417) ~[spring-core-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$1(AbstractAutowireCapableBeanFactory.java:751) ~[spring-beans-6.2.3.jar:6.2.3]
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708) ~[na:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:750) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:683) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:654) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1704) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:618) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:590) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanDefinitionsForType(OnBeanCondition.java:332) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanDefinitionsForType(OnBeanCondition.java:324) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanDefinitionsForType(OnBeanCondition.java:314) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:213) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.evaluateConditionalOnMissingBean(OnBeanCondition.java:196) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:143) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
+	... 17 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: javax/servlet/Filter
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method) ~[na:na]
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1017) ~[na:na]
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150) ~[na:na]
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:862) ~[na:na]
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:760) ~[na:na]
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:681) ~[na:na]
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:639) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2504) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-6.2.3.jar:6.2.3]
+	... 34 common frames omitted
+Caused by: java.lang.ClassNotFoundException: javax.servlet.Filter
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[na:na]
+	... 47 common frames omitted
+
+17:38:06:174  INFO 30892 --- [item-service] [main] c.f.itemservice.ItemServiceApplication   : Starting ItemServiceApplication using Java 17.0.14 with PID 30892 (/home/forevercode/projects/hmall/hmall/item-service/target/classes started by forevercode in /home/forevercode/projects/hmall/hmall)
+17:38:06:176  INFO 30892 --- [item-service] [main] c.f.itemservice.ItemServiceApplication   : The following 1 profile is active: "local"
+17:38:06:664  WARN 30892 --- [item-service] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration.mbeanExporter
+17:38:06:669  INFO 30892 --- [item-service] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+17:38:06:679 ERROR 30892 --- [item-service] [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration.mbeanExporter
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:99) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:184) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:145) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:121) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:430) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.4.3.jar:3.4.3]
+	at com.ffforever.itemservice.ItemServiceApplication.main(ItemServiceApplication.java:12) ~[classes/:na]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.github.xiaoymin.knife4j.spring.configuration.Knife4jAutoConfiguration] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@1dbd16a6]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-6.2.3.jar:6.2.3]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:360) ~[spring-core-6.2.3.jar:6.2.3]
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:417) ~[spring-core-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$1(AbstractAutowireCapableBeanFactory.java:751) ~[spring-beans-6.2.3.jar:6.2.3]
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1740) ~[na:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:750) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:683) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:654) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1704) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:618) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:590) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanDefinitionsForType(OnBeanCondition.java:332) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanDefinitionsForType(OnBeanCondition.java:324) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanDefinitionsForType(OnBeanCondition.java:314) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:213) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.evaluateConditionalOnMissingBean(OnBeanCondition.java:196) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:143) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
+	... 17 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: javax/servlet/Filter
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method) ~[na:na]
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1017) ~[na:na]
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150) ~[na:na]
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:862) ~[na:na]
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:760) ~[na:na]
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:681) ~[na:na]
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:639) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2504) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-6.2.3.jar:6.2.3]
+	... 34 common frames omitted
+Caused by: java.lang.ClassNotFoundException: javax.servlet.Filter
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[na:na]
+	... 47 common frames omitted
+
+18:03:32:128  INFO 33122 --- [item-service] [main] c.f.itemservice.ItemServiceApplication   : Starting ItemServiceApplication using Java 17.0.14 with PID 33122 (/home/forevercode/projects/hmall/hmall/item-service/target/classes started by forevercode in /home/forevercode/projects/hmall/hmall)
+18:03:32:130  INFO 33122 --- [item-service] [main] c.f.itemservice.ItemServiceApplication   : The following 1 profile is active: "local"
+18:03:32:594  WARN 33122 --- [item-service] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration.mbeanExporter
+18:03:32:600  INFO 33122 --- [item-service] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+18:03:32:617 ERROR 33122 --- [item-service] [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration.mbeanExporter
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:99) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:184) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:145) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:121) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:430) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.4.3.jar:3.4.3]
+	at com.ffforever.itemservice.ItemServiceApplication.main(ItemServiceApplication.java:12) ~[classes/:na]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.github.xiaoymin.knife4j.spring.configuration.Knife4jAutoConfiguration] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@1dbd16a6]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-6.2.3.jar:6.2.3]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:360) ~[spring-core-6.2.3.jar:6.2.3]
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:417) ~[spring-core-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$1(AbstractAutowireCapableBeanFactory.java:751) ~[spring-beans-6.2.3.jar:6.2.3]
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708) ~[na:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:750) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:683) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:654) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1704) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:618) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:590) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanDefinitionsForType(OnBeanCondition.java:332) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanDefinitionsForType(OnBeanCondition.java:324) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanDefinitionsForType(OnBeanCondition.java:314) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:213) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.evaluateConditionalOnMissingBean(OnBeanCondition.java:196) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:143) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
+	... 17 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: javax/servlet/Filter
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method) ~[na:na]
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1017) ~[na:na]
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150) ~[na:na]
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:862) ~[na:na]
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:760) ~[na:na]
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:681) ~[na:na]
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:639) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2504) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-6.2.3.jar:6.2.3]
+	... 34 common frames omitted
+Caused by: java.lang.ClassNotFoundException: javax.servlet.Filter
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[na:na]
+	... 47 common frames omitted
+
+18:06:21:673  INFO 34294 --- [item-service] [main] c.f.itemservice.ItemServiceApplication   : Starting ItemServiceApplication using Java 17.0.14 with PID 34294 (/home/forevercode/projects/hmall/hmall/item-service/target/classes started by forevercode in /home/forevercode/projects/hmall/hmall)
+18:06:21:675  INFO 34294 --- [item-service] [main] c.f.itemservice.ItemServiceApplication   : The following 1 profile is active: "local"
+18:06:21:907  WARN 34294 --- [item-service] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: I/O failure while processing configuration class [springfox.documentation.swagger2.configuration.Swagger2DocumentationWebMvcConfiguration]
+18:06:21:912  INFO 34294 --- [item-service] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+18:06:21:922 ERROR 34294 --- [item-service] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanDefinitionStoreException: I/O failure while processing configuration class [springfox.documentation.swagger2.configuration.Swagger2DocumentationWebMvcConfiguration]
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:272) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.annotation.ConfigurationClassParser.processImports(ConfigurationClassParser.java:603) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:347) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:267) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.annotation.ConfigurationClassParser.processMemberClasses(ConfigurationClassParser.java:413) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:294) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:267) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.annotation.ConfigurationClassParser.processImports(ConfigurationClassParser.java:603) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.annotation.ConfigurationClassParser$DeferredImportSelectorGroupingHandler.lambda$processGroupImports$1(ConfigurationClassParser.java:836) ~[spring-context-6.2.3.jar:6.2.3]
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
+	at org.springframework.context.annotation.ConfigurationClassParser$DeferredImportSelectorGroupingHandler.processGroupImports(ConfigurationClassParser.java:833) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.annotation.ConfigurationClassParser$DeferredImportSelectorHandler.process(ConfigurationClassParser.java:803) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:189) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:418) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.4.3.jar:3.4.3]
+	at com.ffforever.itemservice.ItemServiceApplication.main(ItemServiceApplication.java:12) ~[classes/:na]
+Caused by: java.io.FileNotFoundException: class path resource [springfox/documentation/spring/web/SpringfoxWebConfiguration.class] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:215) ~[spring-core-6.2.3.jar:6.2.3]
+	at org.springframework.core.type.classreading.SimpleMetadataReader.getClassReader(SimpleMetadataReader.java:54) ~[spring-core-6.2.3.jar:6.2.3]
+	at org.springframework.core.type.classreading.SimpleMetadataReader.<init>(SimpleMetadataReader.java:48) ~[spring-core-6.2.3.jar:6.2.3]
+	at org.springframework.core.type.classreading.SimpleMetadataReaderFactory.getMetadataReader(SimpleMetadataReaderFactory.java:103) ~[spring-core-6.2.3.jar:6.2.3]
+	at org.springframework.boot.type.classreading.ConcurrentReferenceCachingMetadataReaderFactory.createMetadataReader(ConcurrentReferenceCachingMetadataReaderFactory.java:98) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.type.classreading.ConcurrentReferenceCachingMetadataReaderFactory.getMetadataReader(ConcurrentReferenceCachingMetadataReaderFactory.java:85) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.core.type.classreading.SimpleMetadataReaderFactory.getMetadataReader(SimpleMetadataReaderFactory.java:81) ~[spring-core-6.2.3.jar:6.2.3]
+	at org.springframework.boot.type.classreading.ConcurrentReferenceCachingMetadataReaderFactory.getMetadataReader(ConcurrentReferenceCachingMetadataReaderFactory.java:75) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.context.annotation.ConfigurationClassParser.asSourceClass(ConfigurationClassParser.java:697) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.annotation.ConfigurationClassParser$SourceClass.getRelated(ConfigurationClassParser.java:1111) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.annotation.ConfigurationClassParser$SourceClass.getAnnotationAttributes(ConfigurationClassParser.java:1092) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.annotation.ConfigurationClassParser.collectImports(ConfigurationClassParser.java:553) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.annotation.ConfigurationClassParser.getImports(ConfigurationClassParser.java:526) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:347) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:267) ~[spring-context-6.2.3.jar:6.2.3]
+	... 25 common frames omitted
+
+18:18:29:370  INFO 36257 --- [main] c.f.itemservice.ItemServiceApplication   : Starting ItemServiceApplication using Java 17.0.14 on ForeverCode with PID 36257 (/home/forevercode/projects/hmall/hmall/item-service/target/classes started by forevercode in /home/forevercode/projects/hmall/hmall)
+18:18:29:372  INFO 36257 --- [main] c.f.itemservice.ItemServiceApplication   : The following 1 profile is active: "local"
+18:18:30:189  INFO 36257 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+18:18:30:191  INFO 36257 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+18:18:30:205  INFO 36257 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+18:18:30:614  INFO 36257 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+18:18:30:618  INFO 36257 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+18:18:30:618  INFO 36257 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
+18:18:30:683  INFO 36257 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+18:18:30:683  INFO 36257 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1261 ms
+18:18:31:295  INFO 36257 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+18:18:31:593  INFO 36257 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+18:18:31:593  INFO 36257 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+18:18:31:595  INFO 36257 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+18:18:31:611  INFO 36257 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+18:18:31:703  INFO 36257 --- [main] c.f.itemservice.ItemServiceApplication   : Started ItemServiceApplication in 2.938 seconds (JVM running for 3.818)
+18:19:45:802  INFO 36904 --- [main] c.f.itemservice.ItemServiceApplication   : Starting ItemServiceApplication using Java 17.0.14 on ForeverCode with PID 36904 (/home/forevercode/projects/hmall/hmall/item-service/target/classes started by forevercode in /home/forevercode/projects/hmall/hmall)
+18:19:45:804  INFO 36904 --- [main] c.f.itemservice.ItemServiceApplication   : The following 1 profile is active: "local"
+18:19:46:292  INFO 36904 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+18:19:46:295  INFO 36904 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+18:19:46:308  INFO 36904 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
+18:19:46:677  INFO 36904 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+18:19:46:682  INFO 36904 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+18:19:46:683  INFO 36904 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
+18:19:46:750  INFO 36904 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+18:19:46:750  INFO 36904 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 915 ms
+18:19:47:338  INFO 36904 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+18:19:47:588  INFO 36904 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+18:19:47:589  INFO 36904 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+18:19:47:591  INFO 36904 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+18:19:47:607  INFO 36904 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+18:19:47:711  INFO 36904 --- [main] c.f.itemservice.ItemServiceApplication   : Started ItemServiceApplication in 2.182 seconds (JVM running for 2.552)
+18:20:11:174  INFO 36904 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+18:20:11:174  INFO 36904 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+18:20:11:175  INFO 36904 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+18:27:36:163  INFO 36904 --- [http-nio-8081-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+18:27:36:391  INFO 36904 --- [http-nio-8081-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+18:27:47:119  WARN 36904 --- [http-nio-8081-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.util.List'; nested exception is java.lang.NumberFormatException: For input string: "2，3，4，5"]
+18:27:59:572  INFO 36904 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+18:27:59:579  INFO 36904 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+20:32:54:500  INFO 86472 --- [main] c.f.itemservice.ItemServiceApplication   : Starting ItemServiceApplication using Java 17.0.14 on ForeverCode with PID 86472 (/home/forevercode/projects/hmall/hmall/item-service/target/classes started by forevercode in /home/forevercode/projects/hmall/hmall)
+20:32:54:503  INFO 86472 --- [main] c.f.itemservice.ItemServiceApplication   : The following 1 profile is active: "local"
+20:32:55:114  INFO 86472 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+20:32:55:117  INFO 86472 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+20:32:55:141  INFO 86472 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+20:32:55:598  INFO 86472 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+20:32:55:608  INFO 86472 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+20:32:55:608  INFO 86472 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
+20:32:55:691  INFO 86472 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+20:32:55:691  INFO 86472 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1155 ms
+20:32:56:371  INFO 86472 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+20:32:56:688  INFO 86472 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+20:32:56:689  INFO 86472 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+20:32:56:690  INFO 86472 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+20:32:56:709  INFO 86472 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+20:32:56:823  INFO 86472 --- [main] c.f.itemservice.ItemServiceApplication   : Started ItemServiceApplication in 2.664 seconds (JVM running for 3.154)
+20:43:38:672  INFO 90832 --- [main] c.f.itemservice.ItemServiceApplication   : Starting ItemServiceApplication using Java 17.0.14 on ForeverCode with PID 90832 (/home/forevercode/projects/hmall/hmall/item-service/target/classes started by forevercode in /home/forevercode/projects/hmall/hmall)
+20:43:38:673  INFO 90832 --- [main] c.f.itemservice.ItemServiceApplication   : The following 1 profile is active: "local"
+20:43:39:253  INFO 90832 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+20:43:39:256  INFO 90832 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+20:43:39:273  INFO 90832 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+20:43:39:722  INFO 90832 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+20:43:39:735  INFO 90832 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+20:43:39:736  INFO 90832 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
+20:43:39:817  INFO 90832 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+20:43:39:818  INFO 90832 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1108 ms
+20:43:40:635  INFO 90832 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+20:43:40:986  INFO 90832 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+20:43:40:987  INFO 90832 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+20:43:40:990  INFO 90832 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+20:43:41:014  INFO 90832 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+20:43:41:142  INFO 90832 --- [main] c.f.itemservice.ItemServiceApplication   : Started ItemServiceApplication in 2.908 seconds (JVM running for 3.584)
+20:44:33:600  INFO 90832 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+20:44:33:600  INFO 90832 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+20:44:33:602  INFO 90832 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+20:44:33:665  INFO 90832 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+20:44:33:899  INFO 90832 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+20:47:11:582  INFO 90832 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+20:47:11:593  INFO 90832 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+20:47:13:668  INFO 92405 --- [main] c.f.itemservice.ItemServiceApplication   : Starting ItemServiceApplication using Java 17.0.14 on ForeverCode with PID 92405 (/home/forevercode/projects/hmall/hmall/item-service/target/classes started by forevercode in /home/forevercode/projects/hmall/hmall)
+20:47:13:669  INFO 92405 --- [main] c.f.itemservice.ItemServiceApplication   : The following 1 profile is active: "local"
+20:47:14:251  INFO 92405 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+20:47:14:252  INFO 92405 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+20:47:14:268  INFO 92405 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+20:47:14:770  INFO 92405 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+20:47:14:780  INFO 92405 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+20:47:14:780  INFO 92405 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
+20:47:14:876  INFO 92405 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+20:47:14:877  INFO 92405 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1164 ms
+20:47:15:649  INFO 92405 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+20:47:16:059  INFO 92405 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+20:47:16:060  INFO 92405 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+20:47:16:063  INFO 92405 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+20:47:16:099  INFO 92405 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+20:47:16:275  INFO 92405 --- [main] c.f.itemservice.ItemServiceApplication   : Started ItemServiceApplication in 3.03 seconds (JVM running for 3.702)
+20:59:04:713  INFO 97256 --- [main] c.f.itemservice.ItemServiceApplication   : Starting ItemServiceApplication using Java 17.0.14 on ForeverCode with PID 97256 (/home/forevercode/projects/hmall/hmall/item-service/target/classes started by forevercode in /home/forevercode/projects/hmall/hmall)
+20:59:04:714  INFO 97256 --- [main] c.f.itemservice.ItemServiceApplication   : The following 1 profile is active: "local"
+20:59:05:326  INFO 97256 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+20:59:05:328  INFO 97256 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+20:59:05:346  INFO 97256 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+20:59:05:831  INFO 97256 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+20:59:05:840  INFO 97256 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+20:59:05:841  INFO 97256 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
+20:59:05:926  INFO 97256 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+20:59:05:927  INFO 97256 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1171 ms
+20:59:06:624  INFO 97256 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+20:59:06:932  INFO 97256 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+20:59:06:933  INFO 97256 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+20:59:06:936  INFO 97256 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+20:59:06:956  INFO 97256 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+20:59:07:085  INFO 97256 --- [main] c.f.itemservice.ItemServiceApplication   : Started ItemServiceApplication in 2.821 seconds (JVM running for 3.429)
+20:59:23:775  INFO 97256 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+20:59:23:775  INFO 97256 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+20:59:23:776  INFO 97256 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+20:59:23:845  INFO 97256 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+20:59:24:119  INFO 97256 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.

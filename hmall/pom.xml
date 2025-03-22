@@ -11,6 +11,12 @@
     <modules>
         <module>hm-common</module>
         <module>hm-service</module>
+        <module>item-service</module>
+        <module>cart-service</module>
+        <module>hm-api</module>
+        <module>user-service</module>
+        <module>order-service</module>
+        <module>pay-service</module>
     </modules>
 
     <parent>
@@ -64,12 +70,6 @@
                 <artifactId>mybatis-plus-boot-starter</artifactId>
                 <version>${mybatis-plus.version}</version>
             </dependency>
-<!--            webclient工具-->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-webflux</artifactId>
-            </dependency>
-
             <!--hutool工具包-->
             <dependency>
                 <groupId>cn.hutool</groupId>
@@ -77,6 +77,7 @@
                 <version>${hutool.version}</version>
             </dependency>
         </dependencies>
+
     </dependencyManagement>
     <dependencies>
         <!-- lombok 管理 -->
@@ -91,7 +92,21 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!--        手动排除ribbon-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.cloud</groupId>
+                    <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
     </dependencies>
+
+
 
     <build>
         <pluginManagement>

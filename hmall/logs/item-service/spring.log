@@ -1,373 +1,636 @@
-17:35:18:228  INFO 29821 --- [item-service] [main] c.f.itemservice.ItemServiceApplication   : Starting ItemServiceApplication using Java 17.0.14 with PID 29821 (/home/forevercode/projects/hmall/hmall/item-service/target/classes started by forevercode in /home/forevercode/projects/hmall/hmall)
-17:35:18:230  INFO 29821 --- [item-service] [main] c.f.itemservice.ItemServiceApplication   : The following 1 profile is active: "dev"
-17:35:18:954  WARN 29821 --- [item-service] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration.mbeanExporter
-17:35:18:961  INFO 29821 --- [item-service] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-17:35:18:979 ERROR 29821 --- [item-service] [main] o.s.boot.SpringApplication               : Application run failed
-
-java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration.mbeanExporter
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:99) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:184) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:145) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:121) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:430) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.3.jar:3.4.3]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.4.3.jar:3.4.3]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.3.jar:3.4.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.3.jar:3.4.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.4.3.jar:3.4.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.4.3.jar:3.4.3]
-	at com.ffforever.itemservice.ItemServiceApplication.main(ItemServiceApplication.java:12) ~[classes/:na]
-Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.github.xiaoymin.knife4j.spring.configuration.Knife4jAutoConfiguration] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@1dbd16a6]
-	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-6.2.3.jar:6.2.3]
-	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:360) ~[spring-core-6.2.3.jar:6.2.3]
-	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:417) ~[spring-core-6.2.3.jar:6.2.3]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$1(AbstractAutowireCapableBeanFactory.java:751) ~[spring-beans-6.2.3.jar:6.2.3]
-	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708) ~[na:na]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:750) ~[spring-beans-6.2.3.jar:6.2.3]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:683) ~[spring-beans-6.2.3.jar:6.2.3]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:654) ~[spring-beans-6.2.3.jar:6.2.3]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1704) ~[spring-beans-6.2.3.jar:6.2.3]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:618) ~[spring-beans-6.2.3.jar:6.2.3]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:590) ~[spring-beans-6.2.3.jar:6.2.3]
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanDefinitionsForType(OnBeanCondition.java:332) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanDefinitionsForType(OnBeanCondition.java:324) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanDefinitionsForType(OnBeanCondition.java:314) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:213) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.evaluateConditionalOnMissingBean(OnBeanCondition.java:196) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:143) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
-	... 17 common frames omitted
-Caused by: java.lang.NoClassDefFoundError: javax/servlet/Filter
-	at java.base/java.lang.ClassLoader.defineClass1(Native Method) ~[na:na]
-	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1017) ~[na:na]
-	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150) ~[na:na]
-	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:862) ~[na:na]
-	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:760) ~[na:na]
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:681) ~[na:na]
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:639) ~[na:na]
-	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[na:na]
-	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
-	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402) ~[na:na]
-	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2504) ~[na:na]
-	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-6.2.3.jar:6.2.3]
-	... 34 common frames omitted
-Caused by: java.lang.ClassNotFoundException: javax.servlet.Filter
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
-	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[na:na]
-	... 47 common frames omitted
-
-17:38:06:174  INFO 30892 --- [item-service] [main] c.f.itemservice.ItemServiceApplication   : Starting ItemServiceApplication using Java 17.0.14 with PID 30892 (/home/forevercode/projects/hmall/hmall/item-service/target/classes started by forevercode in /home/forevercode/projects/hmall/hmall)
-17:38:06:176  INFO 30892 --- [item-service] [main] c.f.itemservice.ItemServiceApplication   : The following 1 profile is active: "local"
-17:38:06:664  WARN 30892 --- [item-service] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration.mbeanExporter
-17:38:06:669  INFO 30892 --- [item-service] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-17:38:06:679 ERROR 30892 --- [item-service] [main] o.s.boot.SpringApplication               : Application run failed
-
-java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration.mbeanExporter
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:99) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:184) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:145) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:121) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:430) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.3.jar:3.4.3]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.4.3.jar:3.4.3]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.3.jar:3.4.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.3.jar:3.4.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.4.3.jar:3.4.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.4.3.jar:3.4.3]
-	at com.ffforever.itemservice.ItemServiceApplication.main(ItemServiceApplication.java:12) ~[classes/:na]
-Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.github.xiaoymin.knife4j.spring.configuration.Knife4jAutoConfiguration] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@1dbd16a6]
-	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-6.2.3.jar:6.2.3]
-	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:360) ~[spring-core-6.2.3.jar:6.2.3]
-	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:417) ~[spring-core-6.2.3.jar:6.2.3]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$1(AbstractAutowireCapableBeanFactory.java:751) ~[spring-beans-6.2.3.jar:6.2.3]
-	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1740) ~[na:na]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:750) ~[spring-beans-6.2.3.jar:6.2.3]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:683) ~[spring-beans-6.2.3.jar:6.2.3]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:654) ~[spring-beans-6.2.3.jar:6.2.3]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1704) ~[spring-beans-6.2.3.jar:6.2.3]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:618) ~[spring-beans-6.2.3.jar:6.2.3]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:590) ~[spring-beans-6.2.3.jar:6.2.3]
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanDefinitionsForType(OnBeanCondition.java:332) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanDefinitionsForType(OnBeanCondition.java:324) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanDefinitionsForType(OnBeanCondition.java:314) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:213) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.evaluateConditionalOnMissingBean(OnBeanCondition.java:196) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:143) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
-	... 17 common frames omitted
-Caused by: java.lang.NoClassDefFoundError: javax/servlet/Filter
-	at java.base/java.lang.ClassLoader.defineClass1(Native Method) ~[na:na]
-	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1017) ~[na:na]
-	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150) ~[na:na]
-	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:862) ~[na:na]
-	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:760) ~[na:na]
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:681) ~[na:na]
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:639) ~[na:na]
-	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[na:na]
-	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
-	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402) ~[na:na]
-	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2504) ~[na:na]
-	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-6.2.3.jar:6.2.3]
-	... 34 common frames omitted
-Caused by: java.lang.ClassNotFoundException: javax.servlet.Filter
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
-	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[na:na]
-	... 47 common frames omitted
-
-18:03:32:128  INFO 33122 --- [item-service] [main] c.f.itemservice.ItemServiceApplication   : Starting ItemServiceApplication using Java 17.0.14 with PID 33122 (/home/forevercode/projects/hmall/hmall/item-service/target/classes started by forevercode in /home/forevercode/projects/hmall/hmall)
-18:03:32:130  INFO 33122 --- [item-service] [main] c.f.itemservice.ItemServiceApplication   : The following 1 profile is active: "local"
-18:03:32:594  WARN 33122 --- [item-service] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration.mbeanExporter
-18:03:32:600  INFO 33122 --- [item-service] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-18:03:32:617 ERROR 33122 --- [item-service] [main] o.s.boot.SpringApplication               : Application run failed
-
-java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration.mbeanExporter
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:99) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:184) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:145) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:121) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:430) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.3.jar:3.4.3]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.4.3.jar:3.4.3]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.3.jar:3.4.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.3.jar:3.4.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.4.3.jar:3.4.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.4.3.jar:3.4.3]
-	at com.ffforever.itemservice.ItemServiceApplication.main(ItemServiceApplication.java:12) ~[classes/:na]
-Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.github.xiaoymin.knife4j.spring.configuration.Knife4jAutoConfiguration] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@1dbd16a6]
-	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-6.2.3.jar:6.2.3]
-	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:360) ~[spring-core-6.2.3.jar:6.2.3]
-	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:417) ~[spring-core-6.2.3.jar:6.2.3]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$1(AbstractAutowireCapableBeanFactory.java:751) ~[spring-beans-6.2.3.jar:6.2.3]
-	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708) ~[na:na]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:750) ~[spring-beans-6.2.3.jar:6.2.3]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:683) ~[spring-beans-6.2.3.jar:6.2.3]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:654) ~[spring-beans-6.2.3.jar:6.2.3]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1704) ~[spring-beans-6.2.3.jar:6.2.3]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:618) ~[spring-beans-6.2.3.jar:6.2.3]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:590) ~[spring-beans-6.2.3.jar:6.2.3]
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanDefinitionsForType(OnBeanCondition.java:332) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanDefinitionsForType(OnBeanCondition.java:324) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanDefinitionsForType(OnBeanCondition.java:314) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:213) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.evaluateConditionalOnMissingBean(OnBeanCondition.java:196) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:143) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47) ~[spring-boot-autoconfigure-3.4.3.jar:3.4.3]
-	... 17 common frames omitted
-Caused by: java.lang.NoClassDefFoundError: javax/servlet/Filter
-	at java.base/java.lang.ClassLoader.defineClass1(Native Method) ~[na:na]
-	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1017) ~[na:na]
-	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150) ~[na:na]
-	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:862) ~[na:na]
-	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:760) ~[na:na]
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:681) ~[na:na]
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:639) ~[na:na]
-	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[na:na]
-	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
-	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402) ~[na:na]
-	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2504) ~[na:na]
-	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-6.2.3.jar:6.2.3]
-	... 34 common frames omitted
-Caused by: java.lang.ClassNotFoundException: javax.servlet.Filter
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
-	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[na:na]
-	... 47 common frames omitted
-
-18:06:21:673  INFO 34294 --- [item-service] [main] c.f.itemservice.ItemServiceApplication   : Starting ItemServiceApplication using Java 17.0.14 with PID 34294 (/home/forevercode/projects/hmall/hmall/item-service/target/classes started by forevercode in /home/forevercode/projects/hmall/hmall)
-18:06:21:675  INFO 34294 --- [item-service] [main] c.f.itemservice.ItemServiceApplication   : The following 1 profile is active: "local"
-18:06:21:907  WARN 34294 --- [item-service] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: I/O failure while processing configuration class [springfox.documentation.swagger2.configuration.Swagger2DocumentationWebMvcConfiguration]
-18:06:21:912  INFO 34294 --- [item-service] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-18:06:21:922 ERROR 34294 --- [item-service] [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanDefinitionStoreException: I/O failure while processing configuration class [springfox.documentation.swagger2.configuration.Swagger2DocumentationWebMvcConfiguration]
-	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:272) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.annotation.ConfigurationClassParser.processImports(ConfigurationClassParser.java:603) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:347) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:267) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.annotation.ConfigurationClassParser.processMemberClasses(ConfigurationClassParser.java:413) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:294) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:267) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.annotation.ConfigurationClassParser.processImports(ConfigurationClassParser.java:603) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.annotation.ConfigurationClassParser$DeferredImportSelectorGroupingHandler.lambda$processGroupImports$1(ConfigurationClassParser.java:836) ~[spring-context-6.2.3.jar:6.2.3]
-	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
-	at org.springframework.context.annotation.ConfigurationClassParser$DeferredImportSelectorGroupingHandler.processGroupImports(ConfigurationClassParser.java:833) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.annotation.ConfigurationClassParser$DeferredImportSelectorHandler.process(ConfigurationClassParser.java:803) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:189) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:418) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.3.jar:3.4.3]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.4.3.jar:3.4.3]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.3.jar:3.4.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.3.jar:3.4.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.4.3.jar:3.4.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.4.3.jar:3.4.3]
-	at com.ffforever.itemservice.ItemServiceApplication.main(ItemServiceApplication.java:12) ~[classes/:na]
-Caused by: java.io.FileNotFoundException: class path resource [springfox/documentation/spring/web/SpringfoxWebConfiguration.class] cannot be opened because it does not exist
-	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:215) ~[spring-core-6.2.3.jar:6.2.3]
-	at org.springframework.core.type.classreading.SimpleMetadataReader.getClassReader(SimpleMetadataReader.java:54) ~[spring-core-6.2.3.jar:6.2.3]
-	at org.springframework.core.type.classreading.SimpleMetadataReader.<init>(SimpleMetadataReader.java:48) ~[spring-core-6.2.3.jar:6.2.3]
-	at org.springframework.core.type.classreading.SimpleMetadataReaderFactory.getMetadataReader(SimpleMetadataReaderFactory.java:103) ~[spring-core-6.2.3.jar:6.2.3]
-	at org.springframework.boot.type.classreading.ConcurrentReferenceCachingMetadataReaderFactory.createMetadataReader(ConcurrentReferenceCachingMetadataReaderFactory.java:98) ~[spring-boot-3.4.3.jar:3.4.3]
-	at org.springframework.boot.type.classreading.ConcurrentReferenceCachingMetadataReaderFactory.getMetadataReader(ConcurrentReferenceCachingMetadataReaderFactory.java:85) ~[spring-boot-3.4.3.jar:3.4.3]
-	at org.springframework.core.type.classreading.SimpleMetadataReaderFactory.getMetadataReader(SimpleMetadataReaderFactory.java:81) ~[spring-core-6.2.3.jar:6.2.3]
-	at org.springframework.boot.type.classreading.ConcurrentReferenceCachingMetadataReaderFactory.getMetadataReader(ConcurrentReferenceCachingMetadataReaderFactory.java:75) ~[spring-boot-3.4.3.jar:3.4.3]
-	at org.springframework.context.annotation.ConfigurationClassParser.asSourceClass(ConfigurationClassParser.java:697) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.annotation.ConfigurationClassParser$SourceClass.getRelated(ConfigurationClassParser.java:1111) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.annotation.ConfigurationClassParser$SourceClass.getAnnotationAttributes(ConfigurationClassParser.java:1092) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.annotation.ConfigurationClassParser.collectImports(ConfigurationClassParser.java:553) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.annotation.ConfigurationClassParser.getImports(ConfigurationClassParser.java:526) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:347) ~[spring-context-6.2.3.jar:6.2.3]
-	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:267) ~[spring-context-6.2.3.jar:6.2.3]
-	... 25 common frames omitted
-
-18:18:29:370  INFO 36257 --- [main] c.f.itemservice.ItemServiceApplication   : Starting ItemServiceApplication using Java 17.0.14 on ForeverCode with PID 36257 (/home/forevercode/projects/hmall/hmall/item-service/target/classes started by forevercode in /home/forevercode/projects/hmall/hmall)
-18:18:29:372  INFO 36257 --- [main] c.f.itemservice.ItemServiceApplication   : The following 1 profile is active: "local"
-18:18:30:189  INFO 36257 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-18:18:30:191  INFO 36257 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-18:18:30:205  INFO 36257 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
-18:18:30:614  INFO 36257 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-18:18:30:618  INFO 36257 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-18:18:30:618  INFO 36257 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
-18:18:30:683  INFO 36257 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-18:18:30:683  INFO 36257 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1261 ms
-18:18:31:295  INFO 36257 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
-18:18:31:593  INFO 36257 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-18:18:31:593  INFO 36257 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
-18:18:31:595  INFO 36257 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-18:18:31:611  INFO 36257 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-18:18:31:703  INFO 36257 --- [main] c.f.itemservice.ItemServiceApplication   : Started ItemServiceApplication in 2.938 seconds (JVM running for 3.818)
-18:19:45:802  INFO 36904 --- [main] c.f.itemservice.ItemServiceApplication   : Starting ItemServiceApplication using Java 17.0.14 on ForeverCode with PID 36904 (/home/forevercode/projects/hmall/hmall/item-service/target/classes started by forevercode in /home/forevercode/projects/hmall/hmall)
-18:19:45:804  INFO 36904 --- [main] c.f.itemservice.ItemServiceApplication   : The following 1 profile is active: "local"
-18:19:46:292  INFO 36904 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-18:19:46:295  INFO 36904 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-18:19:46:308  INFO 36904 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
-18:19:46:677  INFO 36904 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-18:19:46:682  INFO 36904 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-18:19:46:683  INFO 36904 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
-18:19:46:750  INFO 36904 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-18:19:46:750  INFO 36904 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 915 ms
-18:19:47:338  INFO 36904 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
-18:19:47:588  INFO 36904 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-18:19:47:589  INFO 36904 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
-18:19:47:591  INFO 36904 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-18:19:47:607  INFO 36904 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-18:19:47:711  INFO 36904 --- [main] c.f.itemservice.ItemServiceApplication   : Started ItemServiceApplication in 2.182 seconds (JVM running for 2.552)
-18:20:11:174  INFO 36904 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-18:20:11:174  INFO 36904 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-18:20:11:175  INFO 36904 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-18:27:36:163  INFO 36904 --- [http-nio-8081-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-18:27:36:391  INFO 36904 --- [http-nio-8081-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-18:27:47:119  WARN 36904 --- [http-nio-8081-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.util.List'; nested exception is java.lang.NumberFormatException: For input string: "2，3，4，5"]
-18:27:59:572  INFO 36904 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-18:27:59:579  INFO 36904 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-20:32:54:500  INFO 86472 --- [main] c.f.itemservice.ItemServiceApplication   : Starting ItemServiceApplication using Java 17.0.14 on ForeverCode with PID 86472 (/home/forevercode/projects/hmall/hmall/item-service/target/classes started by forevercode in /home/forevercode/projects/hmall/hmall)
-20:32:54:503  INFO 86472 --- [main] c.f.itemservice.ItemServiceApplication   : The following 1 profile is active: "local"
-20:32:55:114  INFO 86472 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-20:32:55:117  INFO 86472 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-20:32:55:141  INFO 86472 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
-20:32:55:598  INFO 86472 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-20:32:55:608  INFO 86472 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-20:32:55:608  INFO 86472 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
-20:32:55:691  INFO 86472 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-20:32:55:691  INFO 86472 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1155 ms
-20:32:56:371  INFO 86472 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
-20:32:56:688  INFO 86472 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-20:32:56:689  INFO 86472 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
-20:32:56:690  INFO 86472 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-20:32:56:709  INFO 86472 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-20:32:56:823  INFO 86472 --- [main] c.f.itemservice.ItemServiceApplication   : Started ItemServiceApplication in 2.664 seconds (JVM running for 3.154)
-20:43:38:672  INFO 90832 --- [main] c.f.itemservice.ItemServiceApplication   : Starting ItemServiceApplication using Java 17.0.14 on ForeverCode with PID 90832 (/home/forevercode/projects/hmall/hmall/item-service/target/classes started by forevercode in /home/forevercode/projects/hmall/hmall)
-20:43:38:673  INFO 90832 --- [main] c.f.itemservice.ItemServiceApplication   : The following 1 profile is active: "local"
-20:43:39:253  INFO 90832 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-20:43:39:256  INFO 90832 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-20:43:39:273  INFO 90832 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
-20:43:39:722  INFO 90832 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-20:43:39:735  INFO 90832 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-20:43:39:736  INFO 90832 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
-20:43:39:817  INFO 90832 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-20:43:39:818  INFO 90832 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1108 ms
-20:43:40:635  INFO 90832 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
-20:43:40:986  INFO 90832 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-20:43:40:987  INFO 90832 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
-20:43:40:990  INFO 90832 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-20:43:41:014  INFO 90832 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-20:43:41:142  INFO 90832 --- [main] c.f.itemservice.ItemServiceApplication   : Started ItemServiceApplication in 2.908 seconds (JVM running for 3.584)
-20:44:33:600  INFO 90832 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-20:44:33:600  INFO 90832 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-20:44:33:602  INFO 90832 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-20:44:33:665  INFO 90832 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-20:44:33:899  INFO 90832 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-20:47:11:582  INFO 90832 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-20:47:11:593  INFO 90832 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-20:47:13:668  INFO 92405 --- [main] c.f.itemservice.ItemServiceApplication   : Starting ItemServiceApplication using Java 17.0.14 on ForeverCode with PID 92405 (/home/forevercode/projects/hmall/hmall/item-service/target/classes started by forevercode in /home/forevercode/projects/hmall/hmall)
-20:47:13:669  INFO 92405 --- [main] c.f.itemservice.ItemServiceApplication   : The following 1 profile is active: "local"
-20:47:14:251  INFO 92405 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-20:47:14:252  INFO 92405 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-20:47:14:268  INFO 92405 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
-20:47:14:770  INFO 92405 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-20:47:14:780  INFO 92405 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-20:47:14:780  INFO 92405 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
-20:47:14:876  INFO 92405 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-20:47:14:877  INFO 92405 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1164 ms
-20:47:15:649  INFO 92405 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
-20:47:16:059  INFO 92405 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-20:47:16:060  INFO 92405 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
-20:47:16:063  INFO 92405 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-20:47:16:099  INFO 92405 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-20:47:16:275  INFO 92405 --- [main] c.f.itemservice.ItemServiceApplication   : Started ItemServiceApplication in 3.03 seconds (JVM running for 3.702)
-20:59:04:713  INFO 97256 --- [main] c.f.itemservice.ItemServiceApplication   : Starting ItemServiceApplication using Java 17.0.14 on ForeverCode with PID 97256 (/home/forevercode/projects/hmall/hmall/item-service/target/classes started by forevercode in /home/forevercode/projects/hmall/hmall)
-20:59:04:714  INFO 97256 --- [main] c.f.itemservice.ItemServiceApplication   : The following 1 profile is active: "local"
-20:59:05:326  INFO 97256 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-20:59:05:328  INFO 97256 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-20:59:05:346  INFO 97256 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
-20:59:05:831  INFO 97256 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-20:59:05:840  INFO 97256 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-20:59:05:841  INFO 97256 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
-20:59:05:926  INFO 97256 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-20:59:05:927  INFO 97256 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1171 ms
-20:59:06:624  INFO 97256 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
-20:59:06:932  INFO 97256 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-20:59:06:933  INFO 97256 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
-20:59:06:936  INFO 97256 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-20:59:06:956  INFO 97256 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-20:59:07:085  INFO 97256 --- [main] c.f.itemservice.ItemServiceApplication   : Started ItemServiceApplication in 2.821 seconds (JVM running for 3.429)
-20:59:23:775  INFO 97256 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-20:59:23:775  INFO 97256 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-20:59:23:776  INFO 97256 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-20:59:23:845  INFO 97256 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-20:59:24:119  INFO 97256 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+16:09:16:964  INFO 19359 --- [main] c.f.itemservice.ItemServiceApplication   : Starting ItemServiceApplication using Java 17.0.14 on ForeverCode with PID 19359 (/home/forevercode/projects/hmall/hmall/item-service/target/classes started by forevercode in /home/forevercode/projects/hmall/hmall)
+16:09:16:968  INFO 19359 --- [main] c.f.itemservice.ItemServiceApplication   : The following 1 profile is active: "local"
+16:09:17:517  INFO 19359 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+16:09:17:520  INFO 19359 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+16:09:17:535  INFO 19359 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+16:09:17:693  INFO 19359 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9049b2bf-732c-338f-a359-fea01753b3f8
+16:09:17:944  INFO 19359 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+16:09:17:949  INFO 19359 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+16:09:17:949  INFO 19359 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+16:09:18:009  INFO 19359 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+16:09:18:009  INFO 19359 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1004 ms
+16:09:18:481  WARN 19359 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+16:09:18:482  INFO 19359 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+16:09:18:485  WARN 19359 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+16:09:18:485  INFO 19359 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+16:09:18:657  INFO 19359 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+16:09:18:952  INFO 19359 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of a97d1491-67ea-4b0a-84ac-98c123cf26c1
+16:09:18:984  INFO 19359 --- [main] org.reflections.Reflections              : Reflections took 18 ms to scan 1 urls, producing 3 keys and 6 values 
+16:09:18:996  INFO 19359 --- [main] org.reflections.Reflections              : Reflections took 5 ms to scan 1 urls, producing 4 keys and 9 values 
+16:09:19:002  INFO 19359 --- [main] org.reflections.Reflections              : Reflections took 3 ms to scan 1 urls, producing 3 keys and 10 values 
+16:09:19:004  WARN 19359 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+16:09:19:008  INFO 19359 --- [main] org.reflections.Reflections              : Reflections took 4 ms to scan 1 urls, producing 1 keys and 5 values 
+16:09:19:013  INFO 19359 --- [main] org.reflections.Reflections              : Reflections took 4 ms to scan 1 urls, producing 1 keys and 7 values 
+16:09:19:019  INFO 19359 --- [main] org.reflections.Reflections              : Reflections took 3 ms to scan 1 urls, producing 2 keys and 8 values 
+16:09:19:020  WARN 19359 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+16:09:19:020  INFO 19359 --- [main] com.alibaba.nacos.common.remote.client   : [a97d1491-67ea-4b0a-84ac-98c123cf26c1] RpcClient init label, labels = {module=naming, source=sdk}
+16:09:19:021  INFO 19359 --- [main] com.alibaba.nacos.common.remote.client   : [a97d1491-67ea-4b0a-84ac-98c123cf26c1] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+16:09:19:021  INFO 19359 --- [main] com.alibaba.nacos.common.remote.client   : [a97d1491-67ea-4b0a-84ac-98c123cf26c1] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+16:09:19:022  INFO 19359 --- [main] com.alibaba.nacos.common.remote.client   : [a97d1491-67ea-4b0a-84ac-98c123cf26c1] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+16:09:19:023  INFO 19359 --- [main] com.alibaba.nacos.common.remote.client   : [a97d1491-67ea-4b0a-84ac-98c123cf26c1] Try to connect to server on start up, server: {serverIp = '172.23.131.195', server main port = 8848}
+16:09:19:444  INFO 19359 --- [main] com.alibaba.nacos.common.remote.client   : [a97d1491-67ea-4b0a-84ac-98c123cf26c1] Success to connect to server [172.23.131.195:8848] on start up, connectionId = 1742630959279_172.17.0.1_50296
+16:09:19:444  INFO 19359 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [a97d1491-67ea-4b0a-84ac-98c123cf26c1] Notify connected event to listeners.
+16:09:19:444  INFO 19359 --- [main] com.alibaba.nacos.common.remote.client   : [a97d1491-67ea-4b0a-84ac-98c123cf26c1] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+16:09:19:445  INFO 19359 --- [main] com.alibaba.nacos.common.remote.client   : [a97d1491-67ea-4b0a-84ac-98c123cf26c1] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$1072/0x00007fb518852150
+16:09:19:562  INFO 19359 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+16:09:19:580  INFO 19359 --- [main] o.s.c.a.n.registry.NacosServiceRegistry  : nacos registry, item-service 10.255.255.254:8081 register finished
+16:09:19:586  INFO 19359 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+16:09:19:589  INFO 19359 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+16:09:19:607  INFO 19359 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+16:09:19:705  INFO 19359 --- [main] c.f.itemservice.ItemServiceApplication   : Started ItemServiceApplication in 3.075 seconds (JVM running for 3.439)
+16:09:20:131  INFO 19359 --- [nacos-grpc-client-executor-12] com.alibaba.nacos.common.remote.client   : [a97d1491-67ea-4b0a-84ac-98c123cf26c1] Receive server push request, request = NotifySubscriberRequest, requestId = 2
+16:09:20:131  INFO 19359 --- [nacos-grpc-client-executor-12] com.alibaba.nacos.common.remote.client   : [a97d1491-67ea-4b0a-84ac-98c123cf26c1] Ack server push request, request = NotifySubscriberRequest, requestId = 2
+16:09:50:177  INFO 19359 --- [nacos-grpc-client-executor-27] com.alibaba.nacos.common.remote.client   : [a97d1491-67ea-4b0a-84ac-98c123cf26c1] Receive server push request, request = NotifySubscriberRequest, requestId = 6
+16:09:50:177  INFO 19359 --- [nacos-grpc-client-executor-27] com.alibaba.nacos.common.remote.client   : [a97d1491-67ea-4b0a-84ac-98c123cf26c1] Ack server push request, request = NotifySubscriberRequest, requestId = 6
+16:13:09:689  INFO 19359 --- [nacos-grpc-client-executor-107] com.alibaba.nacos.common.remote.client   : [a97d1491-67ea-4b0a-84ac-98c123cf26c1] Receive server push request, request = NotifySubscriberRequest, requestId = 7
+16:13:09:691  INFO 19359 --- [nacos-grpc-client-executor-107] com.alibaba.nacos.common.remote.client   : [a97d1491-67ea-4b0a-84ac-98c123cf26c1] Ack server push request, request = NotifySubscriberRequest, requestId = 7
+16:15:04:277  WARN 19359 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+16:15:04:278  WARN 19359 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+16:15:04:278  WARN 19359 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+16:15:04:278  WARN 19359 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+16:15:04:288  INFO 19359 --- [SpringApplicationShutdownHook] o.s.c.a.n.registry.NacosServiceRegistry  : De-registering from Nacos Server now...
+16:15:04:296  INFO 19359 --- [SpringApplicationShutdownHook] o.s.c.a.n.registry.NacosServiceRegistry  : De-registration finished.
+16:15:17:862  INFO 21344 --- [main] c.f.itemservice.ItemServiceApplication   : Starting ItemServiceApplication using Java 17.0.14 on ForeverCode with PID 21344 (/home/forevercode/projects/hmall/hmall/item-service/target/classes started by forevercode in /home/forevercode/projects/hmall/hmall)
+16:15:17:864  INFO 21344 --- [main] c.f.itemservice.ItemServiceApplication   : The following 1 profile is active: "local"
+16:15:18:586  INFO 21344 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+16:15:18:589  INFO 21344 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+16:15:18:616  INFO 21344 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+16:15:18:853  INFO 21344 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9049b2bf-732c-338f-a359-fea01753b3f8
+16:15:19:252  INFO 21344 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+16:15:19:260  INFO 21344 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+16:15:19:260  INFO 21344 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+16:15:19:372  INFO 21344 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+16:15:19:372  INFO 21344 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1459 ms
+16:15:20:024  WARN 21344 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+16:15:20:025  INFO 21344 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+16:15:20:029  WARN 21344 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+16:15:20:029  INFO 21344 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+16:15:20:243  INFO 21344 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+16:15:20:657  INFO 21344 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of ce281cee-717e-446d-9507-7f50e116d6e6
+16:15:20:698  INFO 21344 --- [main] org.reflections.Reflections              : Reflections took 21 ms to scan 1 urls, producing 3 keys and 6 values 
+16:15:20:713  INFO 21344 --- [main] org.reflections.Reflections              : Reflections took 5 ms to scan 1 urls, producing 4 keys and 9 values 
+16:15:20:719  INFO 21344 --- [main] org.reflections.Reflections              : Reflections took 4 ms to scan 1 urls, producing 3 keys and 10 values 
+16:15:20:720  WARN 21344 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+16:15:20:724  INFO 21344 --- [main] org.reflections.Reflections              : Reflections took 3 ms to scan 1 urls, producing 1 keys and 5 values 
+16:15:20:730  INFO 21344 --- [main] org.reflections.Reflections              : Reflections took 4 ms to scan 1 urls, producing 1 keys and 7 values 
+16:15:20:739  INFO 21344 --- [main] org.reflections.Reflections              : Reflections took 7 ms to scan 1 urls, producing 2 keys and 8 values 
+16:15:20:742  WARN 21344 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+16:15:20:744  INFO 21344 --- [main] com.alibaba.nacos.common.remote.client   : [ce281cee-717e-446d-9507-7f50e116d6e6] RpcClient init label, labels = {module=naming, source=sdk}
+16:15:20:745  INFO 21344 --- [main] com.alibaba.nacos.common.remote.client   : [ce281cee-717e-446d-9507-7f50e116d6e6] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+16:15:20:746  INFO 21344 --- [main] com.alibaba.nacos.common.remote.client   : [ce281cee-717e-446d-9507-7f50e116d6e6] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+16:15:20:746  INFO 21344 --- [main] com.alibaba.nacos.common.remote.client   : [ce281cee-717e-446d-9507-7f50e116d6e6] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+16:15:20:748  INFO 21344 --- [main] com.alibaba.nacos.common.remote.client   : [ce281cee-717e-446d-9507-7f50e116d6e6] Try to connect to server on start up, server: {serverIp = '172.23.131.195', server main port = 8848}
+16:15:21:260  INFO 21344 --- [main] com.alibaba.nacos.common.remote.client   : [ce281cee-717e-446d-9507-7f50e116d6e6] Success to connect to server [172.23.131.195:8848] on start up, connectionId = 1742631321083_172.17.0.1_44042
+16:15:21:261  INFO 21344 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [ce281cee-717e-446d-9507-7f50e116d6e6] Notify connected event to listeners.
+16:15:21:261  INFO 21344 --- [main] com.alibaba.nacos.common.remote.client   : [ce281cee-717e-446d-9507-7f50e116d6e6] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+16:15:21:262  INFO 21344 --- [main] com.alibaba.nacos.common.remote.client   : [ce281cee-717e-446d-9507-7f50e116d6e6] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$1071/0x00007fc8a4866be0
+16:15:21:429  INFO 21344 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+16:15:21:446  INFO 21344 --- [main] o.s.c.a.n.registry.NacosServiceRegistry  : nacos registry, item-service 10.255.255.254:8081 register finished
+16:15:21:460  INFO 21344 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+16:15:21:463  INFO 21344 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+16:15:21:493  INFO 21344 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+16:15:21:628  INFO 21344 --- [main] c.f.itemservice.ItemServiceApplication   : Started ItemServiceApplication in 4.271 seconds (JVM running for 5.056)
+16:15:21:962  INFO 21344 --- [nacos-grpc-client-executor-14] com.alibaba.nacos.common.remote.client   : [ce281cee-717e-446d-9507-7f50e116d6e6] Receive server push request, request = NotifySubscriberRequest, requestId = 14
+16:15:21:963  INFO 21344 --- [nacos-grpc-client-executor-14] com.alibaba.nacos.common.remote.client   : [ce281cee-717e-446d-9507-7f50e116d6e6] Ack server push request, request = NotifySubscriberRequest, requestId = 14
+16:15:22:054  INFO 21344 --- [nacos-grpc-client-executor-15] com.alibaba.nacos.common.remote.client   : [ce281cee-717e-446d-9507-7f50e116d6e6] Receive server push request, request = NotifySubscriberRequest, requestId = 16
+16:15:22:054  INFO 21344 --- [nacos-grpc-client-executor-15] com.alibaba.nacos.common.remote.client   : [ce281cee-717e-446d-9507-7f50e116d6e6] Ack server push request, request = NotifySubscriberRequest, requestId = 16
+16:15:57:601  INFO 21344 --- [nacos-grpc-client-executor-27] com.alibaba.nacos.common.remote.client   : [ce281cee-717e-446d-9507-7f50e116d6e6] Receive server push request, request = NotifySubscriberRequest, requestId = 18
+16:15:57:602  INFO 21344 --- [nacos-grpc-client-executor-27] com.alibaba.nacos.common.remote.client   : [ce281cee-717e-446d-9507-7f50e116d6e6] Ack server push request, request = NotifySubscriberRequest, requestId = 18
+16:16:07:018  INFO 21344 --- [nacos-grpc-client-executor-29] com.alibaba.nacos.common.remote.client   : [ce281cee-717e-446d-9507-7f50e116d6e6] Receive server push request, request = NotifySubscriberRequest, requestId = 20
+16:16:07:019  INFO 21344 --- [nacos-grpc-client-executor-29] com.alibaba.nacos.common.remote.client   : [ce281cee-717e-446d-9507-7f50e116d6e6] Ack server push request, request = NotifySubscriberRequest, requestId = 20
+16:19:57:169  WARN 21344 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+16:19:57:170  WARN 21344 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+16:19:57:170  WARN 21344 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+16:19:57:170  WARN 21344 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+16:19:57:183  INFO 21344 --- [SpringApplicationShutdownHook] o.s.c.a.n.registry.NacosServiceRegistry  : De-registering from Nacos Server now...
+16:19:57:196  INFO 21344 --- [SpringApplicationShutdownHook] o.s.c.a.n.registry.NacosServiceRegistry  : De-registration finished.
+16:20:29:517  INFO 23149 --- [main] c.f.itemservice.ItemServiceApplication   : Starting ItemServiceApplication using Java 17.0.14 on ForeverCode with PID 23149 (/home/forevercode/projects/hmall/hmall/item-service/target/classes started by forevercode in /home/forevercode/projects/hmall/hmall)
+16:20:29:518  INFO 23149 --- [main] c.f.itemservice.ItemServiceApplication   : The following 1 profile is active: "local"
+16:20:30:184  INFO 23149 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+16:20:30:186  INFO 23149 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+16:20:30:201  INFO 23149 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+16:20:30:371  INFO 23149 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9049b2bf-732c-338f-a359-fea01753b3f8
+16:20:30:686  INFO 23149 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+16:20:30:691  INFO 23149 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+16:20:30:692  INFO 23149 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+16:20:30:781  INFO 23149 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+16:20:30:781  INFO 23149 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1215 ms
+16:20:31:470  WARN 23149 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+16:20:31:470  INFO 23149 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+16:20:31:476  WARN 23149 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+16:20:31:476  INFO 23149 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+16:20:31:721  INFO 23149 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+16:20:32:167  INFO 23149 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of bf557b3e-7577-4991-90f8-33d64ee534a1
+16:20:32:213  INFO 23149 --- [main] org.reflections.Reflections              : Reflections took 20 ms to scan 1 urls, producing 3 keys and 6 values 
+16:20:32:232  INFO 23149 --- [main] org.reflections.Reflections              : Reflections took 6 ms to scan 1 urls, producing 4 keys and 9 values 
+16:20:32:240  INFO 23149 --- [main] org.reflections.Reflections              : Reflections took 6 ms to scan 1 urls, producing 3 keys and 10 values 
+16:20:32:242  WARN 23149 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+16:20:32:249  INFO 23149 --- [main] org.reflections.Reflections              : Reflections took 6 ms to scan 1 urls, producing 1 keys and 5 values 
+16:20:32:260  INFO 23149 --- [main] org.reflections.Reflections              : Reflections took 9 ms to scan 1 urls, producing 1 keys and 7 values 
+16:20:32:268  INFO 23149 --- [main] org.reflections.Reflections              : Reflections took 6 ms to scan 1 urls, producing 2 keys and 8 values 
+16:20:32:270  WARN 23149 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+16:20:32:272  INFO 23149 --- [main] com.alibaba.nacos.common.remote.client   : [bf557b3e-7577-4991-90f8-33d64ee534a1] RpcClient init label, labels = {module=naming, source=sdk}
+16:20:32:274  INFO 23149 --- [main] com.alibaba.nacos.common.remote.client   : [bf557b3e-7577-4991-90f8-33d64ee534a1] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+16:20:32:274  INFO 23149 --- [main] com.alibaba.nacos.common.remote.client   : [bf557b3e-7577-4991-90f8-33d64ee534a1] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+16:20:32:274  INFO 23149 --- [main] com.alibaba.nacos.common.remote.client   : [bf557b3e-7577-4991-90f8-33d64ee534a1] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+16:20:32:276  INFO 23149 --- [main] com.alibaba.nacos.common.remote.client   : [bf557b3e-7577-4991-90f8-33d64ee534a1] Try to connect to server on start up, server: {serverIp = '172.23.131.195', server main port = 8848}
+16:20:32:853  INFO 23149 --- [main] com.alibaba.nacos.common.remote.client   : [bf557b3e-7577-4991-90f8-33d64ee534a1] Success to connect to server [172.23.131.195:8848] on start up, connectionId = 1742631632682_172.17.0.1_39452
+16:20:32:854  INFO 23149 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [bf557b3e-7577-4991-90f8-33d64ee534a1] Notify connected event to listeners.
+16:20:32:854  INFO 23149 --- [main] com.alibaba.nacos.common.remote.client   : [bf557b3e-7577-4991-90f8-33d64ee534a1] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+16:20:32:855  INFO 23149 --- [main] com.alibaba.nacos.common.remote.client   : [bf557b3e-7577-4991-90f8-33d64ee534a1] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$1071/0x00007fac408696d8
+16:20:32:964  INFO 23149 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+16:20:32:977  INFO 23149 --- [main] o.s.c.a.n.registry.NacosServiceRegistry  : nacos registry, item-service 10.255.255.254:8081 register finished
+16:20:32:983  INFO 23149 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+16:20:32:987  INFO 23149 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+16:20:33:017  INFO 23149 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+16:20:33:145  INFO 23149 --- [main] c.f.itemservice.ItemServiceApplication   : Started ItemServiceApplication in 4.015 seconds (JVM running for 4.646)
+16:20:33:490  INFO 23149 --- [nacos-grpc-client-executor-15] com.alibaba.nacos.common.remote.client   : [bf557b3e-7577-4991-90f8-33d64ee534a1] Receive server push request, request = NotifySubscriberRequest, requestId = 28
+16:20:33:492  INFO 23149 --- [nacos-grpc-client-executor-15] com.alibaba.nacos.common.remote.client   : [bf557b3e-7577-4991-90f8-33d64ee534a1] Ack server push request, request = NotifySubscriberRequest, requestId = 28
+16:20:33:583  INFO 23149 --- [nacos-grpc-client-executor-16] com.alibaba.nacos.common.remote.client   : [bf557b3e-7577-4991-90f8-33d64ee534a1] Receive server push request, request = NotifySubscriberRequest, requestId = 29
+16:20:33:584  INFO 23149 --- [nacos-grpc-client-executor-16] com.alibaba.nacos.common.remote.client   : [bf557b3e-7577-4991-90f8-33d64ee534a1] Ack server push request, request = NotifySubscriberRequest, requestId = 29
+16:21:25:474  WARN 23149 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+16:21:25:474  WARN 23149 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+16:21:25:474  WARN 23149 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+16:21:25:475  WARN 23149 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+16:21:25:493  INFO 23149 --- [SpringApplicationShutdownHook] o.s.c.a.n.registry.NacosServiceRegistry  : De-registering from Nacos Server now...
+16:21:25:502  INFO 23149 --- [SpringApplicationShutdownHook] o.s.c.a.n.registry.NacosServiceRegistry  : De-registration finished.
+16:23:31:701  INFO 24173 --- [main] c.f.itemservice.ItemServiceApplication   : Starting ItemServiceApplication using Java 17.0.14 on ForeverCode with PID 24173 (/home/forevercode/projects/hmall/hmall/item-service/target/classes started by forevercode in /home/forevercode/projects/hmall/hmall)
+16:23:31:703  INFO 24173 --- [main] c.f.itemservice.ItemServiceApplication   : The following 1 profile is active: "local"
+16:23:32:390  INFO 24173 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+16:23:32:392  INFO 24173 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+16:23:32:409  INFO 24173 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+16:23:32:628  INFO 24173 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9049b2bf-732c-338f-a359-fea01753b3f8
+16:23:33:022  INFO 24173 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+16:23:33:030  INFO 24173 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+16:23:33:030  INFO 24173 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+16:23:33:131  INFO 24173 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+16:23:33:132  INFO 24173 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1385 ms
+16:23:33:859  WARN 24173 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+16:23:33:860  INFO 24173 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+16:23:33:864  WARN 24173 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+16:23:33:864  INFO 24173 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+16:23:34:135  INFO 24173 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+16:23:34:593  INFO 24173 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of 89d45926-ee1c-43ae-a1da-961f57627182
+16:23:34:637  INFO 24173 --- [main] org.reflections.Reflections              : Reflections took 22 ms to scan 1 urls, producing 3 keys and 6 values 
+16:23:34:661  INFO 24173 --- [main] org.reflections.Reflections              : Reflections took 10 ms to scan 1 urls, producing 4 keys and 9 values 
+16:23:34:673  INFO 24173 --- [main] org.reflections.Reflections              : Reflections took 8 ms to scan 1 urls, producing 3 keys and 10 values 
+16:23:34:675  WARN 24173 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+16:23:34:681  INFO 24173 --- [main] org.reflections.Reflections              : Reflections took 4 ms to scan 1 urls, producing 1 keys and 5 values 
+16:23:34:688  INFO 24173 --- [main] org.reflections.Reflections              : Reflections took 6 ms to scan 1 urls, producing 1 keys and 7 values 
+16:23:34:695  INFO 24173 --- [main] org.reflections.Reflections              : Reflections took 5 ms to scan 1 urls, producing 2 keys and 8 values 
+16:23:34:698  WARN 24173 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+16:23:34:699  INFO 24173 --- [main] com.alibaba.nacos.common.remote.client   : [89d45926-ee1c-43ae-a1da-961f57627182] RpcClient init label, labels = {module=naming, source=sdk}
+16:23:34:701  INFO 24173 --- [main] com.alibaba.nacos.common.remote.client   : [89d45926-ee1c-43ae-a1da-961f57627182] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+16:23:34:701  INFO 24173 --- [main] com.alibaba.nacos.common.remote.client   : [89d45926-ee1c-43ae-a1da-961f57627182] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+16:23:34:702  INFO 24173 --- [main] com.alibaba.nacos.common.remote.client   : [89d45926-ee1c-43ae-a1da-961f57627182] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+16:23:34:704  INFO 24173 --- [main] com.alibaba.nacos.common.remote.client   : [89d45926-ee1c-43ae-a1da-961f57627182] Try to connect to server on start up, server: {serverIp = '172.23.131.195', server main port = 8848}
+16:23:35:240  INFO 24173 --- [main] com.alibaba.nacos.common.remote.client   : [89d45926-ee1c-43ae-a1da-961f57627182] Success to connect to server [172.23.131.195:8848] on start up, connectionId = 1742631815080_172.17.0.1_38044
+16:23:35:241  INFO 24173 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [89d45926-ee1c-43ae-a1da-961f57627182] Notify connected event to listeners.
+16:23:35:241  INFO 24173 --- [main] com.alibaba.nacos.common.remote.client   : [89d45926-ee1c-43ae-a1da-961f57627182] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+16:23:35:241  INFO 24173 --- [main] com.alibaba.nacos.common.remote.client   : [89d45926-ee1c-43ae-a1da-961f57627182] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$1071/0x00007fdfc8868000
+16:23:35:358  INFO 24173 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+16:23:35:374  INFO 24173 --- [main] o.s.c.a.n.registry.NacosServiceRegistry  : nacos registry, item-service 10.255.255.254:8081 register finished
+16:23:35:382  INFO 24173 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+16:23:35:386  INFO 24173 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+16:23:35:414  INFO 24173 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+16:23:35:557  INFO 24173 --- [main] c.f.itemservice.ItemServiceApplication   : Started ItemServiceApplication in 4.341 seconds (JVM running for 5.028)
+16:23:35:947  INFO 24173 --- [nacos-grpc-client-executor-12] com.alibaba.nacos.common.remote.client   : [89d45926-ee1c-43ae-a1da-961f57627182] Receive server push request, request = NotifySubscriberRequest, requestId = 32
+16:23:35:948  INFO 24173 --- [nacos-grpc-client-executor-12] com.alibaba.nacos.common.remote.client   : [89d45926-ee1c-43ae-a1da-961f57627182] Ack server push request, request = NotifySubscriberRequest, requestId = 32
+16:24:05:975  INFO 24173 --- [nacos-grpc-client-executor-28] com.alibaba.nacos.common.remote.client   : [89d45926-ee1c-43ae-a1da-961f57627182] Receive server push request, request = NotifySubscriberRequest, requestId = 35
+16:24:05:976  INFO 24173 --- [nacos-grpc-client-executor-28] com.alibaba.nacos.common.remote.client   : [89d45926-ee1c-43ae-a1da-961f57627182] Ack server push request, request = NotifySubscriberRequest, requestId = 35
+16:24:21:090  INFO 24173 --- [nacos-grpc-client-executor-34] com.alibaba.nacos.common.remote.client   : [89d45926-ee1c-43ae-a1da-961f57627182] Receive server push request, request = NotifySubscriberRequest, requestId = 36
+16:24:21:092  INFO 24173 --- [nacos-grpc-client-executor-34] com.alibaba.nacos.common.remote.client   : [89d45926-ee1c-43ae-a1da-961f57627182] Ack server push request, request = NotifySubscriberRequest, requestId = 36
+16:24:25:997  INFO 24173 --- [nacos-grpc-client-executor-35] com.alibaba.nacos.common.remote.client   : [89d45926-ee1c-43ae-a1da-961f57627182] Receive server push request, request = NotifySubscriberRequest, requestId = 37
+16:24:25:998  INFO 24173 --- [nacos-grpc-client-executor-35] com.alibaba.nacos.common.remote.client   : [89d45926-ee1c-43ae-a1da-961f57627182] Ack server push request, request = NotifySubscriberRequest, requestId = 37
+16:24:39:917  INFO 24173 --- [nacos-grpc-client-executor-38] com.alibaba.nacos.common.remote.client   : [89d45926-ee1c-43ae-a1da-961f57627182] Receive server push request, request = NotifySubscriberRequest, requestId = 40
+16:24:39:920  INFO 24173 --- [nacos-grpc-client-executor-38] com.alibaba.nacos.common.remote.client   : [89d45926-ee1c-43ae-a1da-961f57627182] Ack server push request, request = NotifySubscriberRequest, requestId = 40
+16:24:50:438  INFO 24173 --- [nacos-grpc-client-executor-40] com.alibaba.nacos.common.remote.client   : [89d45926-ee1c-43ae-a1da-961f57627182] Receive server push request, request = NotifySubscriberRequest, requestId = 44
+16:24:50:439  INFO 24173 --- [nacos-grpc-client-executor-40] com.alibaba.nacos.common.remote.client   : [89d45926-ee1c-43ae-a1da-961f57627182] Ack server push request, request = NotifySubscriberRequest, requestId = 44
+16:25:22:071  INFO 24173 --- [nacos-grpc-client-executor-50] com.alibaba.nacos.common.remote.client   : [89d45926-ee1c-43ae-a1da-961f57627182] Receive server push request, request = NotifySubscriberRequest, requestId = 45
+16:25:22:072  INFO 24173 --- [nacos-grpc-client-executor-50] com.alibaba.nacos.common.remote.client   : [89d45926-ee1c-43ae-a1da-961f57627182] Ack server push request, request = NotifySubscriberRequest, requestId = 45
+16:25:23:974  INFO 24173 --- [nacos-grpc-client-executor-51] com.alibaba.nacos.common.remote.client   : [89d45926-ee1c-43ae-a1da-961f57627182] Receive server push request, request = NotifySubscriberRequest, requestId = 47
+16:25:23:975  INFO 24173 --- [nacos-grpc-client-executor-51] com.alibaba.nacos.common.remote.client   : [89d45926-ee1c-43ae-a1da-961f57627182] Ack server push request, request = NotifySubscriberRequest, requestId = 47
+16:27:00:176  WARN 24173 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+16:27:00:176  WARN 24173 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+16:27:00:177  WARN 24173 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+16:27:00:177  WARN 24173 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+16:27:00:192  INFO 24173 --- [SpringApplicationShutdownHook] o.s.c.a.n.registry.NacosServiceRegistry  : De-registering from Nacos Server now...
+16:27:00:202  INFO 24173 --- [SpringApplicationShutdownHook] o.s.c.a.n.registry.NacosServiceRegistry  : De-registration finished.
+16:32:11:638  INFO 26564 --- [main] c.f.itemservice.ItemServiceApplication   : Starting ItemServiceApplication using Java 17.0.14 on ForeverCode with PID 26564 (/home/forevercode/projects/hmall/hmall/item-service/target/classes started by forevercode in /home/forevercode/projects/hmall/hmall)
+16:32:11:640  INFO 26564 --- [main] c.f.itemservice.ItemServiceApplication   : The following 1 profile is active: "local"
+16:32:12:163  INFO 26564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+16:32:12:165  INFO 26564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+16:32:12:178  INFO 26564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+16:32:12:334  INFO 26564 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9049b2bf-732c-338f-a359-fea01753b3f8
+16:32:12:587  INFO 26564 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+16:32:12:594  INFO 26564 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+16:32:12:594  INFO 26564 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+16:32:12:665  INFO 26564 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+16:32:12:665  INFO 26564 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 992 ms
+16:32:13:069  WARN 26564 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+16:32:13:069  INFO 26564 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+16:32:13:072  WARN 26564 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+16:32:13:072  INFO 26564 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+16:32:13:226  INFO 26564 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+16:32:13:568  INFO 26564 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of f7ec46cd-8fca-4a30-ad44-1df1e0ba0db8
+16:32:13:594  INFO 26564 --- [main] org.reflections.Reflections              : Reflections took 12 ms to scan 1 urls, producing 3 keys and 6 values 
+16:32:13:610  INFO 26564 --- [main] org.reflections.Reflections              : Reflections took 9 ms to scan 1 urls, producing 4 keys and 9 values 
+16:32:13:615  INFO 26564 --- [main] org.reflections.Reflections              : Reflections took 4 ms to scan 1 urls, producing 3 keys and 10 values 
+16:32:13:616  WARN 26564 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+16:32:13:621  INFO 26564 --- [main] org.reflections.Reflections              : Reflections took 3 ms to scan 1 urls, producing 1 keys and 5 values 
+16:32:13:626  INFO 26564 --- [main] org.reflections.Reflections              : Reflections took 5 ms to scan 1 urls, producing 1 keys and 7 values 
+16:32:13:631  INFO 26564 --- [main] org.reflections.Reflections              : Reflections took 4 ms to scan 1 urls, producing 2 keys and 8 values 
+16:32:13:632  WARN 26564 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+16:32:13:633  INFO 26564 --- [main] com.alibaba.nacos.common.remote.client   : [f7ec46cd-8fca-4a30-ad44-1df1e0ba0db8] RpcClient init label, labels = {module=naming, source=sdk}
+16:32:13:635  INFO 26564 --- [main] com.alibaba.nacos.common.remote.client   : [f7ec46cd-8fca-4a30-ad44-1df1e0ba0db8] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+16:32:13:635  INFO 26564 --- [main] com.alibaba.nacos.common.remote.client   : [f7ec46cd-8fca-4a30-ad44-1df1e0ba0db8] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+16:32:13:635  INFO 26564 --- [main] com.alibaba.nacos.common.remote.client   : [f7ec46cd-8fca-4a30-ad44-1df1e0ba0db8] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+16:32:13:637  INFO 26564 --- [main] com.alibaba.nacos.common.remote.client   : [f7ec46cd-8fca-4a30-ad44-1df1e0ba0db8] Try to connect to server on start up, server: {serverIp = '172.23.131.195', server main port = 8848}
+16:32:14:018  INFO 26564 --- [main] com.alibaba.nacos.common.remote.client   : [f7ec46cd-8fca-4a30-ad44-1df1e0ba0db8] Success to connect to server [172.23.131.195:8848] on start up, connectionId = 1742632333871_172.17.0.1_51454
+16:32:14:018  INFO 26564 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [f7ec46cd-8fca-4a30-ad44-1df1e0ba0db8] Notify connected event to listeners.
+16:32:14:019  INFO 26564 --- [main] com.alibaba.nacos.common.remote.client   : [f7ec46cd-8fca-4a30-ad44-1df1e0ba0db8] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+16:32:14:019  INFO 26564 --- [main] com.alibaba.nacos.common.remote.client   : [f7ec46cd-8fca-4a30-ad44-1df1e0ba0db8] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$1072/0x00007f27508316d8
+16:32:14:127  INFO 26564 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+16:32:14:140  INFO 26564 --- [main] o.s.c.a.n.registry.NacosServiceRegistry  : nacos registry, item-service 10.255.255.254:8081 register finished
+16:32:14:152  INFO 26564 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+16:32:14:155  INFO 26564 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+16:32:14:184  INFO 26564 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+16:32:14:288  INFO 26564 --- [main] c.f.itemservice.ItemServiceApplication   : Started ItemServiceApplication in 2.955 seconds (JVM running for 3.379)
+16:32:14:675  INFO 26564 --- [nacos-grpc-client-executor-13] com.alibaba.nacos.common.remote.client   : [f7ec46cd-8fca-4a30-ad44-1df1e0ba0db8] Receive server push request, request = NotifySubscriberRequest, requestId = 51
+16:32:14:675  INFO 26564 --- [nacos-grpc-client-executor-13] com.alibaba.nacos.common.remote.client   : [f7ec46cd-8fca-4a30-ad44-1df1e0ba0db8] Ack server push request, request = NotifySubscriberRequest, requestId = 51
+16:32:44:719  INFO 26564 --- [nacos-grpc-client-executor-26] com.alibaba.nacos.common.remote.client   : [f7ec46cd-8fca-4a30-ad44-1df1e0ba0db8] Receive server push request, request = NotifySubscriberRequest, requestId = 56
+16:32:44:719  INFO 26564 --- [nacos-grpc-client-executor-26] com.alibaba.nacos.common.remote.client   : [f7ec46cd-8fca-4a30-ad44-1df1e0ba0db8] Ack server push request, request = NotifySubscriberRequest, requestId = 56
+16:33:20:869  INFO 26564 --- [nacos-grpc-client-executor-41] com.alibaba.nacos.common.remote.client   : [f7ec46cd-8fca-4a30-ad44-1df1e0ba0db8] Receive server push request, request = NotifySubscriberRequest, requestId = 58
+16:33:20:874  INFO 26564 --- [nacos-grpc-client-executor-41] com.alibaba.nacos.common.remote.client   : [f7ec46cd-8fca-4a30-ad44-1df1e0ba0db8] Ack server push request, request = NotifySubscriberRequest, requestId = 58
+16:33:32:086  INFO 26564 --- [nacos-grpc-client-executor-44] com.alibaba.nacos.common.remote.client   : [f7ec46cd-8fca-4a30-ad44-1df1e0ba0db8] Receive server push request, request = NotifySubscriberRequest, requestId = 64
+16:33:32:087  INFO 26564 --- [nacos-grpc-client-executor-44] com.alibaba.nacos.common.remote.client   : [f7ec46cd-8fca-4a30-ad44-1df1e0ba0db8] Ack server push request, request = NotifySubscriberRequest, requestId = 64
+16:38:01:635  INFO 26564 --- [nacos-grpc-client-executor-126] com.alibaba.nacos.common.remote.client   : [f7ec46cd-8fca-4a30-ad44-1df1e0ba0db8] Receive server push request, request = NotifySubscriberRequest, requestId = 67
+16:38:01:636  INFO 26564 --- [nacos-grpc-client-executor-126] com.alibaba.nacos.common.remote.client   : [f7ec46cd-8fca-4a30-ad44-1df1e0ba0db8] Ack server push request, request = NotifySubscriberRequest, requestId = 67
+16:38:14:750  INFO 26564 --- [nacos-grpc-client-executor-132] com.alibaba.nacos.common.remote.client   : [f7ec46cd-8fca-4a30-ad44-1df1e0ba0db8] Receive server push request, request = NotifySubscriberRequest, requestId = 72
+16:38:14:750  INFO 26564 --- [nacos-grpc-client-executor-132] com.alibaba.nacos.common.remote.client   : [f7ec46cd-8fca-4a30-ad44-1df1e0ba0db8] Ack server push request, request = NotifySubscriberRequest, requestId = 72
+16:45:55:828  WARN 26564 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+16:45:55:828  WARN 26564 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+16:45:55:829  WARN 26564 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+16:45:55:829  WARN 26564 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+16:45:55:843  INFO 26564 --- [SpringApplicationShutdownHook] o.s.c.a.n.registry.NacosServiceRegistry  : De-registering from Nacos Server now...
+16:45:55:849  INFO 26564 --- [SpringApplicationShutdownHook] o.s.c.a.n.registry.NacosServiceRegistry  : De-registration finished.
+16:50:25:688  INFO 32030 --- [main] c.f.itemservice.ItemServiceApplication   : Starting ItemServiceApplication using Java 17.0.14 on ForeverCode with PID 32030 (/home/forevercode/projects/hmall/hmall/item-service/target/classes started by forevercode in /home/forevercode/projects/hmall/hmall)
+16:50:25:690  INFO 32030 --- [main] c.f.itemservice.ItemServiceApplication   : The following 1 profile is active: "local"
+16:50:26:218  INFO 32030 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+16:50:26:219  INFO 32030 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+16:50:26:236  INFO 32030 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+16:50:26:383  INFO 32030 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9049b2bf-732c-338f-a359-fea01753b3f8
+16:50:26:666  INFO 32030 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+16:50:26:673  INFO 32030 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+16:50:26:673  INFO 32030 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+16:50:26:739  INFO 32030 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+16:50:26:739  INFO 32030 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1012 ms
+16:50:27:208  WARN 32030 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+16:50:27:208  INFO 32030 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+16:50:27:210  WARN 32030 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+16:50:27:210  INFO 32030 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+16:50:27:386  INFO 32030 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+16:50:27:706  INFO 32030 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of 391558c6-aa98-46c7-9647-a98945ac660d
+16:50:27:732  INFO 32030 --- [main] org.reflections.Reflections              : Reflections took 12 ms to scan 1 urls, producing 3 keys and 6 values 
+16:50:27:748  INFO 32030 --- [main] org.reflections.Reflections              : Reflections took 8 ms to scan 1 urls, producing 4 keys and 9 values 
+16:50:27:756  INFO 32030 --- [main] org.reflections.Reflections              : Reflections took 6 ms to scan 1 urls, producing 3 keys and 10 values 
+16:50:27:757  WARN 32030 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+16:50:27:762  INFO 32030 --- [main] org.reflections.Reflections              : Reflections took 4 ms to scan 1 urls, producing 1 keys and 5 values 
+16:50:27:768  INFO 32030 --- [main] org.reflections.Reflections              : Reflections took 5 ms to scan 1 urls, producing 1 keys and 7 values 
+16:50:27:774  INFO 32030 --- [main] org.reflections.Reflections              : Reflections took 4 ms to scan 1 urls, producing 2 keys and 8 values 
+16:50:27:775  WARN 32030 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+16:50:27:776  INFO 32030 --- [main] com.alibaba.nacos.common.remote.client   : [391558c6-aa98-46c7-9647-a98945ac660d] RpcClient init label, labels = {module=naming, source=sdk}
+16:50:27:777  INFO 32030 --- [main] com.alibaba.nacos.common.remote.client   : [391558c6-aa98-46c7-9647-a98945ac660d] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+16:50:27:777  INFO 32030 --- [main] com.alibaba.nacos.common.remote.client   : [391558c6-aa98-46c7-9647-a98945ac660d] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+16:50:27:778  INFO 32030 --- [main] com.alibaba.nacos.common.remote.client   : [391558c6-aa98-46c7-9647-a98945ac660d] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+16:50:27:779  INFO 32030 --- [main] com.alibaba.nacos.common.remote.client   : [391558c6-aa98-46c7-9647-a98945ac660d] Try to connect to server on start up, server: {serverIp = '172.23.131.195', server main port = 8848}
+16:50:28:173  INFO 32030 --- [main] com.alibaba.nacos.common.remote.client   : [391558c6-aa98-46c7-9647-a98945ac660d] Success to connect to server [172.23.131.195:8848] on start up, connectionId = 1742633428019_172.17.0.1_49998
+16:50:28:174  INFO 32030 --- [main] com.alibaba.nacos.common.remote.client   : [391558c6-aa98-46c7-9647-a98945ac660d] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+16:50:28:174  INFO 32030 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [391558c6-aa98-46c7-9647-a98945ac660d] Notify connected event to listeners.
+16:50:28:174  INFO 32030 --- [main] com.alibaba.nacos.common.remote.client   : [391558c6-aa98-46c7-9647-a98945ac660d] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$1072/0x00007f3c64831d30
+16:50:28:306  INFO 32030 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+16:50:28:320  INFO 32030 --- [main] o.s.c.a.n.registry.NacosServiceRegistry  : nacos registry, item-service 10.255.255.254:8081 register finished
+16:50:28:326  INFO 32030 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+16:50:28:329  INFO 32030 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+16:50:28:351  INFO 32030 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+16:50:28:453  INFO 32030 --- [main] c.f.itemservice.ItemServiceApplication   : Started ItemServiceApplication in 3.094 seconds (JVM running for 3.483)
+16:50:28:927  INFO 32030 --- [nacos-grpc-client-executor-12] com.alibaba.nacos.common.remote.client   : [391558c6-aa98-46c7-9647-a98945ac660d] Receive server push request, request = NotifySubscriberRequest, requestId = 81
+16:50:28:927  INFO 32030 --- [nacos-grpc-client-executor-12] com.alibaba.nacos.common.remote.client   : [391558c6-aa98-46c7-9647-a98945ac660d] Ack server push request, request = NotifySubscriberRequest, requestId = 81
+16:50:58:862  INFO 32030 --- [nacos-grpc-client-executor-25] com.alibaba.nacos.common.remote.client   : [391558c6-aa98-46c7-9647-a98945ac660d] Receive server push request, request = NotifySubscriberRequest, requestId = 84
+16:50:58:863  INFO 32030 --- [nacos-grpc-client-executor-25] com.alibaba.nacos.common.remote.client   : [391558c6-aa98-46c7-9647-a98945ac660d] Ack server push request, request = NotifySubscriberRequest, requestId = 84
+16:56:17:739  WARN 32030 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+16:56:17:740  WARN 32030 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+16:56:17:740  WARN 32030 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+16:56:17:740  WARN 32030 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+16:56:17:750  INFO 32030 --- [SpringApplicationShutdownHook] o.s.c.a.n.registry.NacosServiceRegistry  : De-registering from Nacos Server now...
+16:56:17:758  INFO 32030 --- [SpringApplicationShutdownHook] o.s.c.a.n.registry.NacosServiceRegistry  : De-registration finished.
+16:56:37:240  INFO 34065 --- [main] c.f.itemservice.ItemServiceApplication   : Starting ItemServiceApplication using Java 17.0.14 on ForeverCode with PID 34065 (/home/forevercode/projects/hmall/hmall/item-service/target/classes started by forevercode in /home/forevercode/projects/hmall/hmall)
+16:56:37:242  INFO 34065 --- [main] c.f.itemservice.ItemServiceApplication   : The following 1 profile is active: "local"
+16:56:37:773  INFO 34065 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+16:56:37:774  INFO 34065 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+16:56:37:786  INFO 34065 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
+16:56:37:942  INFO 34065 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9049b2bf-732c-338f-a359-fea01753b3f8
+16:56:38:233  INFO 34065 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+16:56:38:239  INFO 34065 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+16:56:38:240  INFO 34065 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+16:56:38:320  INFO 34065 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+16:56:38:320  INFO 34065 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1045 ms
+16:56:38:839  WARN 34065 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+16:56:38:839  INFO 34065 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+16:56:38:842  WARN 34065 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+16:56:38:843  INFO 34065 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+16:56:39:030  INFO 34065 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+16:56:39:328  INFO 34065 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of 89029c2a-f5c3-44ec-9c09-e84f3b3e15f8
+16:56:39:363  INFO 34065 --- [main] org.reflections.Reflections              : Reflections took 16 ms to scan 1 urls, producing 3 keys and 6 values 
+16:56:39:383  INFO 34065 --- [main] org.reflections.Reflections              : Reflections took 10 ms to scan 1 urls, producing 4 keys and 9 values 
+16:56:39:389  INFO 34065 --- [main] org.reflections.Reflections              : Reflections took 4 ms to scan 1 urls, producing 3 keys and 10 values 
+16:56:39:391  WARN 34065 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+16:56:39:395  INFO 34065 --- [main] org.reflections.Reflections              : Reflections took 3 ms to scan 1 urls, producing 1 keys and 5 values 
+16:56:39:402  INFO 34065 --- [main] org.reflections.Reflections              : Reflections took 5 ms to scan 1 urls, producing 1 keys and 7 values 
+16:56:39:412  INFO 34065 --- [main] org.reflections.Reflections              : Reflections took 7 ms to scan 1 urls, producing 2 keys and 8 values 
+16:56:39:414  WARN 34065 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+16:56:39:414  INFO 34065 --- [main] com.alibaba.nacos.common.remote.client   : [89029c2a-f5c3-44ec-9c09-e84f3b3e15f8] RpcClient init label, labels = {module=naming, source=sdk}
+16:56:39:416  INFO 34065 --- [main] com.alibaba.nacos.common.remote.client   : [89029c2a-f5c3-44ec-9c09-e84f3b3e15f8] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+16:56:39:416  INFO 34065 --- [main] com.alibaba.nacos.common.remote.client   : [89029c2a-f5c3-44ec-9c09-e84f3b3e15f8] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+16:56:39:416  INFO 34065 --- [main] com.alibaba.nacos.common.remote.client   : [89029c2a-f5c3-44ec-9c09-e84f3b3e15f8] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+16:56:39:418  INFO 34065 --- [main] com.alibaba.nacos.common.remote.client   : [89029c2a-f5c3-44ec-9c09-e84f3b3e15f8] Try to connect to server on start up, server: {serverIp = '172.23.131.195', server main port = 8848}
+16:56:39:857  INFO 34065 --- [main] com.alibaba.nacos.common.remote.client   : [89029c2a-f5c3-44ec-9c09-e84f3b3e15f8] Success to connect to server [172.23.131.195:8848] on start up, connectionId = 1742633799696_172.17.0.1_36258
+16:56:39:859  INFO 34065 --- [main] com.alibaba.nacos.common.remote.client   : [89029c2a-f5c3-44ec-9c09-e84f3b3e15f8] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+16:56:39:859  INFO 34065 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [89029c2a-f5c3-44ec-9c09-e84f3b3e15f8] Notify connected event to listeners.
+16:56:39:859  INFO 34065 --- [main] com.alibaba.nacos.common.remote.client   : [89029c2a-f5c3-44ec-9c09-e84f3b3e15f8] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$1072/0x00007f74f0830d40
+16:56:39:968  INFO 34065 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+16:56:39:985  INFO 34065 --- [main] o.s.c.a.n.registry.NacosServiceRegistry  : nacos registry, item-service 10.255.255.254:8081 register finished
+16:56:39:992  INFO 34065 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+16:56:39:995  INFO 34065 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+16:56:40:017  INFO 34065 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+16:56:40:135  INFO 34065 --- [main] c.f.itemservice.ItemServiceApplication   : Started ItemServiceApplication in 3.23 seconds (JVM running for 3.616)
+16:56:40:519  INFO 34065 --- [nacos-grpc-client-executor-15] com.alibaba.nacos.common.remote.client   : [89029c2a-f5c3-44ec-9c09-e84f3b3e15f8] Receive server push request, request = NotifySubscriberRequest, requestId = 90
+16:56:40:519  INFO 34065 --- [nacos-grpc-client-executor-15] com.alibaba.nacos.common.remote.client   : [89029c2a-f5c3-44ec-9c09-e84f3b3e15f8] Ack server push request, request = NotifySubscriberRequest, requestId = 90
+16:56:40:525  INFO 34065 --- [nacos-grpc-client-executor-16] com.alibaba.nacos.common.remote.client   : [89029c2a-f5c3-44ec-9c09-e84f3b3e15f8] Receive server push request, request = NotifySubscriberRequest, requestId = 91
+16:56:40:527  INFO 34065 --- [nacos-grpc-client-executor-16] com.alibaba.nacos.common.remote.client   : [89029c2a-f5c3-44ec-9c09-e84f3b3e15f8] Ack server push request, request = NotifySubscriberRequest, requestId = 91
+16:57:26:045  WARN 34065 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+16:57:26:045  WARN 34065 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+16:57:26:046  WARN 34065 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+16:57:26:046  WARN 34065 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+16:57:26:056  INFO 34065 --- [SpringApplicationShutdownHook] o.s.c.a.n.registry.NacosServiceRegistry  : De-registering from Nacos Server now...
+16:57:26:065  INFO 34065 --- [SpringApplicationShutdownHook] o.s.c.a.n.registry.NacosServiceRegistry  : De-registration finished.
+17:04:03:766  INFO 36028 --- [main] c.f.itemservice.ItemServiceApplication   : Starting ItemServiceApplication using Java 17.0.14 on ForeverCode with PID 36028 (/home/forevercode/projects/hmall/hmall/item-service/target/classes started by forevercode in /home/forevercode/projects/hmall/hmall)
+17:04:03:767  INFO 36028 --- [main] c.f.itemservice.ItemServiceApplication   : The following 1 profile is active: "local"
+17:04:04:291  INFO 36028 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+17:04:04:293  INFO 36028 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+17:04:04:304  INFO 36028 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
+17:04:04:468  INFO 36028 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9049b2bf-732c-338f-a359-fea01753b3f8
+17:04:04:744  INFO 36028 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+17:04:04:750  INFO 36028 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+17:04:04:750  INFO 36028 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+17:04:04:808  INFO 36028 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+17:04:04:808  INFO 36028 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1010 ms
+17:04:05:269  WARN 36028 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+17:04:05:269  INFO 36028 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+17:04:05:273  WARN 36028 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+17:04:05:273  INFO 36028 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+17:04:05:433  INFO 36028 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+17:04:05:727  INFO 36028 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of 908766f2-1bee-4d04-9bca-b6bddf635f98
+17:04:05:759  INFO 36028 --- [main] org.reflections.Reflections              : Reflections took 14 ms to scan 1 urls, producing 3 keys and 6 values 
+17:04:05:773  INFO 36028 --- [main] org.reflections.Reflections              : Reflections took 6 ms to scan 1 urls, producing 4 keys and 9 values 
+17:04:05:783  INFO 36028 --- [main] org.reflections.Reflections              : Reflections took 8 ms to scan 1 urls, producing 3 keys and 10 values 
+17:04:05:784  WARN 36028 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+17:04:05:788  INFO 36028 --- [main] org.reflections.Reflections              : Reflections took 4 ms to scan 1 urls, producing 1 keys and 5 values 
+17:04:05:793  INFO 36028 --- [main] org.reflections.Reflections              : Reflections took 4 ms to scan 1 urls, producing 1 keys and 7 values 
+17:04:05:798  INFO 36028 --- [main] org.reflections.Reflections              : Reflections took 3 ms to scan 1 urls, producing 2 keys and 8 values 
+17:04:05:800  WARN 36028 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+17:04:05:800  INFO 36028 --- [main] com.alibaba.nacos.common.remote.client   : [908766f2-1bee-4d04-9bca-b6bddf635f98] RpcClient init label, labels = {module=naming, source=sdk}
+17:04:05:801  INFO 36028 --- [main] com.alibaba.nacos.common.remote.client   : [908766f2-1bee-4d04-9bca-b6bddf635f98] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+17:04:05:802  INFO 36028 --- [main] com.alibaba.nacos.common.remote.client   : [908766f2-1bee-4d04-9bca-b6bddf635f98] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+17:04:05:802  INFO 36028 --- [main] com.alibaba.nacos.common.remote.client   : [908766f2-1bee-4d04-9bca-b6bddf635f98] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+17:04:05:804  INFO 36028 --- [main] com.alibaba.nacos.common.remote.client   : [908766f2-1bee-4d04-9bca-b6bddf635f98] Try to connect to server on start up, server: {serverIp = '172.23.131.195', server main port = 8848}
+17:04:06:265  INFO 36028 --- [main] com.alibaba.nacos.common.remote.client   : [908766f2-1bee-4d04-9bca-b6bddf635f98] Success to connect to server [172.23.131.195:8848] on start up, connectionId = 1742634246091_172.17.0.1_36592
+17:04:06:266  INFO 36028 --- [main] com.alibaba.nacos.common.remote.client   : [908766f2-1bee-4d04-9bca-b6bddf635f98] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+17:04:06:266  INFO 36028 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [908766f2-1bee-4d04-9bca-b6bddf635f98] Notify connected event to listeners.
+17:04:06:266  INFO 36028 --- [main] com.alibaba.nacos.common.remote.client   : [908766f2-1bee-4d04-9bca-b6bddf635f98] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$1072/0x00007efbec832150
+17:04:06:367  INFO 36028 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+17:04:06:382  INFO 36028 --- [main] o.s.c.a.n.registry.NacosServiceRegistry  : nacos registry, item-service 10.255.255.254:8081 register finished
+17:04:06:389  INFO 36028 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+17:04:06:392  INFO 36028 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+17:04:06:409  INFO 36028 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+17:04:06:423  INFO 36028 --- [nacos-grpc-client-executor-12] com.alibaba.nacos.common.remote.client   : [908766f2-1bee-4d04-9bca-b6bddf635f98] Receive server push request, request = NotifySubscriberRequest, requestId = 94
+17:04:06:424  INFO 36028 --- [nacos-grpc-client-executor-12] com.alibaba.nacos.common.remote.client   : [908766f2-1bee-4d04-9bca-b6bddf635f98] Ack server push request, request = NotifySubscriberRequest, requestId = 94
+17:04:06:525  INFO 36028 --- [main] c.f.itemservice.ItemServiceApplication   : Started ItemServiceApplication in 3.083 seconds (JVM running for 3.478)
+17:04:36:965  INFO 36028 --- [nacos-grpc-client-executor-27] com.alibaba.nacos.common.remote.client   : [908766f2-1bee-4d04-9bca-b6bddf635f98] Receive server push request, request = NotifySubscriberRequest, requestId = 97
+17:04:36:965  INFO 36028 --- [nacos-grpc-client-executor-27] com.alibaba.nacos.common.remote.client   : [908766f2-1bee-4d04-9bca-b6bddf635f98] Ack server push request, request = NotifySubscriberRequest, requestId = 97
+17:04:57:402  WARN 36028 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+17:04:57:402  WARN 36028 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+17:04:57:402  WARN 36028 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+17:04:57:402  WARN 36028 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+17:04:57:413  INFO 36028 --- [SpringApplicationShutdownHook] o.s.c.a.n.registry.NacosServiceRegistry  : De-registering from Nacos Server now...
+17:04:57:422  INFO 36028 --- [SpringApplicationShutdownHook] o.s.c.a.n.registry.NacosServiceRegistry  : De-registration finished.
+17:05:15:668  INFO 36930 --- [main] c.f.itemservice.ItemServiceApplication   : Starting ItemServiceApplication using Java 17.0.14 on ForeverCode with PID 36930 (/home/forevercode/projects/hmall/hmall/item-service/target/classes started by forevercode in /home/forevercode/projects/hmall/hmall)
+17:05:15:671  INFO 36930 --- [main] c.f.itemservice.ItemServiceApplication   : The following 1 profile is active: "local"
+17:05:16:243  INFO 36930 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+17:05:16:245  INFO 36930 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+17:05:16:260  INFO 36930 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+17:05:16:449  INFO 36930 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9049b2bf-732c-338f-a359-fea01753b3f8
+17:05:16:719  INFO 36930 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+17:05:16:726  INFO 36930 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+17:05:16:727  INFO 36930 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+17:05:16:801  INFO 36930 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+17:05:16:801  INFO 36930 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1085 ms
+17:05:17:216  WARN 36930 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+17:05:17:217  INFO 36930 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+17:05:17:220  WARN 36930 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+17:05:17:221  INFO 36930 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+17:05:17:365  INFO 36930 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+17:05:17:670  INFO 36930 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of d83b66d9-8367-4f62-80f2-f978f0e42318
+17:05:17:699  INFO 36930 --- [main] org.reflections.Reflections              : Reflections took 14 ms to scan 1 urls, producing 3 keys and 6 values 
+17:05:17:713  INFO 36930 --- [main] org.reflections.Reflections              : Reflections took 7 ms to scan 1 urls, producing 4 keys and 9 values 
+17:05:17:720  INFO 36930 --- [main] org.reflections.Reflections              : Reflections took 5 ms to scan 1 urls, producing 3 keys and 10 values 
+17:05:17:723  WARN 36930 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+17:05:17:728  INFO 36930 --- [main] org.reflections.Reflections              : Reflections took 4 ms to scan 1 urls, producing 1 keys and 5 values 
+17:05:17:735  INFO 36930 --- [main] org.reflections.Reflections              : Reflections took 5 ms to scan 1 urls, producing 1 keys and 7 values 
+17:05:17:742  INFO 36930 --- [main] org.reflections.Reflections              : Reflections took 5 ms to scan 1 urls, producing 2 keys and 8 values 
+17:05:17:744  WARN 36930 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+17:05:17:744  INFO 36930 --- [main] com.alibaba.nacos.common.remote.client   : [d83b66d9-8367-4f62-80f2-f978f0e42318] RpcClient init label, labels = {module=naming, source=sdk}
+17:05:17:745  INFO 36930 --- [main] com.alibaba.nacos.common.remote.client   : [d83b66d9-8367-4f62-80f2-f978f0e42318] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+17:05:17:746  INFO 36930 --- [main] com.alibaba.nacos.common.remote.client   : [d83b66d9-8367-4f62-80f2-f978f0e42318] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+17:05:17:746  INFO 36930 --- [main] com.alibaba.nacos.common.remote.client   : [d83b66d9-8367-4f62-80f2-f978f0e42318] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+17:05:17:748  INFO 36930 --- [main] com.alibaba.nacos.common.remote.client   : [d83b66d9-8367-4f62-80f2-f978f0e42318] Try to connect to server on start up, server: {serverIp = '172.23.131.195', server main port = 8848}
+17:05:18:158  INFO 36930 --- [main] com.alibaba.nacos.common.remote.client   : [d83b66d9-8367-4f62-80f2-f978f0e42318] Success to connect to server [172.23.131.195:8848] on start up, connectionId = 1742634318006_172.17.0.1_37746
+17:05:18:158  INFO 36930 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [d83b66d9-8367-4f62-80f2-f978f0e42318] Notify connected event to listeners.
+17:05:18:159  INFO 36930 --- [main] com.alibaba.nacos.common.remote.client   : [d83b66d9-8367-4f62-80f2-f978f0e42318] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+17:05:18:159  INFO 36930 --- [main] com.alibaba.nacos.common.remote.client   : [d83b66d9-8367-4f62-80f2-f978f0e42318] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$1072/0x00007fe130830d40
+17:05:18:259  INFO 36930 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+17:05:18:275  INFO 36930 --- [main] o.s.c.a.n.registry.NacosServiceRegistry  : nacos registry, item-service 10.255.255.254:8081 register finished
+17:05:18:280  INFO 36930 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+17:05:18:283  INFO 36930 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+17:05:18:305  INFO 36930 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+17:05:18:422  INFO 36930 --- [main] c.f.itemservice.ItemServiceApplication   : Started ItemServiceApplication in 3.084 seconds (JVM running for 3.476)
+17:05:18:839  INFO 36930 --- [nacos-grpc-client-executor-14] com.alibaba.nacos.common.remote.client   : [d83b66d9-8367-4f62-80f2-f978f0e42318] Receive server push request, request = NotifySubscriberRequest, requestId = 100
+17:05:18:841  INFO 36930 --- [nacos-grpc-client-executor-14] com.alibaba.nacos.common.remote.client   : [d83b66d9-8367-4f62-80f2-f978f0e42318] Ack server push request, request = NotifySubscriberRequest, requestId = 100
+17:05:18:847  INFO 36930 --- [nacos-grpc-client-executor-15] com.alibaba.nacos.common.remote.client   : [d83b66d9-8367-4f62-80f2-f978f0e42318] Receive server push request, request = NotifySubscriberRequest, requestId = 101
+17:05:18:847  INFO 36930 --- [nacos-grpc-client-executor-15] com.alibaba.nacos.common.remote.client   : [d83b66d9-8367-4f62-80f2-f978f0e42318] Ack server push request, request = NotifySubscriberRequest, requestId = 101
+17:05:24:841  INFO 36930 --- [nacos-grpc-client-executor-19] com.alibaba.nacos.common.remote.client   : [d83b66d9-8367-4f62-80f2-f978f0e42318] Receive server push request, request = NotifySubscriberRequest, requestId = 103
+17:05:24:842  INFO 36930 --- [nacos-grpc-client-executor-19] com.alibaba.nacos.common.remote.client   : [d83b66d9-8367-4f62-80f2-f978f0e42318] Ack server push request, request = NotifySubscriberRequest, requestId = 103
+17:05:57:191  WARN 36930 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+17:05:57:191  WARN 36930 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+17:05:57:192  WARN 36930 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+17:05:57:192  WARN 36930 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+17:05:57:202  INFO 36930 --- [SpringApplicationShutdownHook] o.s.c.a.n.registry.NacosServiceRegistry  : De-registering from Nacos Server now...
+17:05:57:214  INFO 36930 --- [SpringApplicationShutdownHook] o.s.c.a.n.registry.NacosServiceRegistry  : De-registration finished.
+17:06:13:539  INFO 37692 --- [main] c.f.itemservice.ItemServiceApplication   : Starting ItemServiceApplication using Java 17.0.14 on ForeverCode with PID 37692 (/home/forevercode/projects/hmall/hmall/item-service/target/classes started by forevercode in /home/forevercode/projects/hmall/hmall)
+17:06:13:541  INFO 37692 --- [main] c.f.itemservice.ItemServiceApplication   : The following 1 profile is active: "local"
+17:06:14:094  INFO 37692 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+17:06:14:096  INFO 37692 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+17:06:14:109  INFO 37692 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+17:06:14:266  INFO 37692 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=952cf9e3-1fdf-356c-9448-cf967e5f3ce4
+17:06:14:529  INFO 37692 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+17:06:14:534  INFO 37692 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+17:06:14:535  INFO 37692 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+17:06:14:618  INFO 37692 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+17:06:14:618  INFO 37692 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1037 ms
+17:06:15:093  WARN 37692 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+17:06:15:093  INFO 37692 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+17:06:15:098  WARN 37692 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+17:06:15:098  INFO 37692 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+17:06:15:274  INFO 37692 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+17:06:15:629  INFO 37692 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of 98de3c2a-6d93-4362-acc7-d6fe8d9a8699
+17:06:15:658  INFO 37692 --- [main] org.reflections.Reflections              : Reflections took 14 ms to scan 1 urls, producing 3 keys and 6 values 
+17:06:15:673  INFO 37692 --- [main] org.reflections.Reflections              : Reflections took 7 ms to scan 1 urls, producing 4 keys and 9 values 
+17:06:15:680  INFO 37692 --- [main] org.reflections.Reflections              : Reflections took 5 ms to scan 1 urls, producing 3 keys and 10 values 
+17:06:15:682  WARN 37692 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+17:06:15:687  INFO 37692 --- [main] org.reflections.Reflections              : Reflections took 5 ms to scan 1 urls, producing 1 keys and 5 values 
+17:06:15:693  INFO 37692 --- [main] org.reflections.Reflections              : Reflections took 5 ms to scan 1 urls, producing 1 keys and 7 values 
+17:06:15:699  INFO 37692 --- [main] org.reflections.Reflections              : Reflections took 5 ms to scan 1 urls, producing 2 keys and 8 values 
+17:06:15:700  WARN 37692 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+17:06:15:701  INFO 37692 --- [main] com.alibaba.nacos.common.remote.client   : [98de3c2a-6d93-4362-acc7-d6fe8d9a8699] RpcClient init label, labels = {module=naming, source=sdk}
+17:06:15:702  INFO 37692 --- [main] com.alibaba.nacos.common.remote.client   : [98de3c2a-6d93-4362-acc7-d6fe8d9a8699] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+17:06:15:702  INFO 37692 --- [main] com.alibaba.nacos.common.remote.client   : [98de3c2a-6d93-4362-acc7-d6fe8d9a8699] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+17:06:15:703  INFO 37692 --- [main] com.alibaba.nacos.common.remote.client   : [98de3c2a-6d93-4362-acc7-d6fe8d9a8699] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+17:06:15:704  INFO 37692 --- [main] com.alibaba.nacos.common.remote.client   : [98de3c2a-6d93-4362-acc7-d6fe8d9a8699] Try to connect to server on start up, server: {serverIp = '172.23.131.195', server main port = 8848}
+17:06:16:128  INFO 37692 --- [main] com.alibaba.nacos.common.remote.client   : [98de3c2a-6d93-4362-acc7-d6fe8d9a8699] Success to connect to server [172.23.131.195:8848] on start up, connectionId = 1742634375973_172.17.0.1_50520
+17:06:16:128  INFO 37692 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [98de3c2a-6d93-4362-acc7-d6fe8d9a8699] Notify connected event to listeners.
+17:06:16:128  INFO 37692 --- [main] com.alibaba.nacos.common.remote.client   : [98de3c2a-6d93-4362-acc7-d6fe8d9a8699] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+17:06:16:129  INFO 37692 --- [main] com.alibaba.nacos.common.remote.client   : [98de3c2a-6d93-4362-acc7-d6fe8d9a8699] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$1075/0x00007f1b6c83bdd0
+17:06:16:232  INFO 37692 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+17:06:16:246  INFO 37692 --- [main] o.s.c.a.n.registry.NacosServiceRegistry  : nacos registry, item-service 10.255.255.254:8081 register finished
+17:06:16:252  INFO 37692 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+17:06:16:254  INFO 37692 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+17:06:16:272  INFO 37692 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+17:06:16:357  INFO 37692 --- [main] c.f.itemservice.ItemServiceApplication   : Started ItemServiceApplication in 3.16 seconds (JVM running for 3.567)
+17:06:16:830  INFO 37692 --- [nacos-grpc-client-executor-12] com.alibaba.nacos.common.remote.client   : [98de3c2a-6d93-4362-acc7-d6fe8d9a8699] Receive server push request, request = NotifySubscriberRequest, requestId = 107
+17:06:16:832  INFO 37692 --- [nacos-grpc-client-executor-12] com.alibaba.nacos.common.remote.client   : [98de3c2a-6d93-4362-acc7-d6fe8d9a8699] Ack server push request, request = NotifySubscriberRequest, requestId = 107
+17:06:16:837  INFO 37692 --- [nacos-grpc-client-executor-13] com.alibaba.nacos.common.remote.client   : [98de3c2a-6d93-4362-acc7-d6fe8d9a8699] Receive server push request, request = NotifySubscriberRequest, requestId = 106
+17:06:16:837  INFO 37692 --- [nacos-grpc-client-executor-13] com.alibaba.nacos.common.remote.client   : [98de3c2a-6d93-4362-acc7-d6fe8d9a8699] Ack server push request, request = NotifySubscriberRequest, requestId = 106
+17:06:22:830  INFO 37692 --- [nacos-grpc-client-executor-17] com.alibaba.nacos.common.remote.client   : [98de3c2a-6d93-4362-acc7-d6fe8d9a8699] Receive server push request, request = NotifySubscriberRequest, requestId = 110
+17:06:22:831  INFO 37692 --- [nacos-grpc-client-executor-17] com.alibaba.nacos.common.remote.client   : [98de3c2a-6d93-4362-acc7-d6fe8d9a8699] Ack server push request, request = NotifySubscriberRequest, requestId = 110
+17:07:47:248  WARN 37692 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+17:07:47:248  WARN 37692 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+17:07:47:248  WARN 37692 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+17:07:47:249  WARN 37692 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+17:07:47:260  INFO 37692 --- [SpringApplicationShutdownHook] o.s.c.a.n.registry.NacosServiceRegistry  : De-registering from Nacos Server now...
+17:07:47:270  INFO 37692 --- [SpringApplicationShutdownHook] o.s.c.a.n.registry.NacosServiceRegistry  : De-registration finished.
+17:08:17:673  INFO 38599 --- [main] c.f.itemservice.ItemServiceApplication   : Starting ItemServiceApplication using Java 17.0.14 on ForeverCode with PID 38599 (/home/forevercode/projects/hmall/hmall/item-service/target/classes started by forevercode in /home/forevercode/projects/hmall/hmall)
+17:08:17:675  INFO 38599 --- [main] c.f.itemservice.ItemServiceApplication   : The following 1 profile is active: "local"
+17:08:18:222  INFO 38599 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+17:08:18:223  INFO 38599 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+17:08:18:237  INFO 38599 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+17:08:18:379  INFO 38599 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=952cf9e3-1fdf-356c-9448-cf967e5f3ce4
+17:08:18:709  INFO 38599 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+17:08:18:715  INFO 38599 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+17:08:18:716  INFO 38599 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+17:08:18:797  INFO 38599 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+17:08:18:797  INFO 38599 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1090 ms
+17:08:19:295  WARN 38599 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+17:08:19:296  INFO 38599 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+17:08:19:299  WARN 38599 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+17:08:19:299  INFO 38599 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+17:08:19:496  INFO 38599 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+17:08:19:782  INFO 38599 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of 6b713ff3-e0c7-440b-958e-4da20a5c0330
+17:08:19:814  INFO 38599 --- [main] org.reflections.Reflections              : Reflections took 17 ms to scan 1 urls, producing 3 keys and 6 values 
+17:08:19:829  INFO 38599 --- [main] org.reflections.Reflections              : Reflections took 7 ms to scan 1 urls, producing 4 keys and 9 values 
+17:08:19:837  INFO 38599 --- [main] org.reflections.Reflections              : Reflections took 5 ms to scan 1 urls, producing 3 keys and 10 values 
+17:08:19:838  WARN 38599 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+17:08:19:845  INFO 38599 --- [main] org.reflections.Reflections              : Reflections took 6 ms to scan 1 urls, producing 1 keys and 5 values 
+17:08:19:852  INFO 38599 --- [main] org.reflections.Reflections              : Reflections took 5 ms to scan 1 urls, producing 1 keys and 7 values 
+17:08:19:858  INFO 38599 --- [main] org.reflections.Reflections              : Reflections took 5 ms to scan 1 urls, producing 2 keys and 8 values 
+17:08:19:860  WARN 38599 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+17:08:19:861  INFO 38599 --- [main] com.alibaba.nacos.common.remote.client   : [6b713ff3-e0c7-440b-958e-4da20a5c0330] RpcClient init label, labels = {module=naming, source=sdk}
+17:08:19:862  INFO 38599 --- [main] com.alibaba.nacos.common.remote.client   : [6b713ff3-e0c7-440b-958e-4da20a5c0330] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+17:08:19:862  INFO 38599 --- [main] com.alibaba.nacos.common.remote.client   : [6b713ff3-e0c7-440b-958e-4da20a5c0330] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+17:08:19:862  INFO 38599 --- [main] com.alibaba.nacos.common.remote.client   : [6b713ff3-e0c7-440b-958e-4da20a5c0330] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+17:08:19:864  INFO 38599 --- [main] com.alibaba.nacos.common.remote.client   : [6b713ff3-e0c7-440b-958e-4da20a5c0330] Try to connect to server on start up, server: {serverIp = '172.23.131.195', server main port = 8848}
+17:08:20:231  INFO 38599 --- [main] com.alibaba.nacos.common.remote.client   : [6b713ff3-e0c7-440b-958e-4da20a5c0330] Success to connect to server [172.23.131.195:8848] on start up, connectionId = 1742634500080_172.17.0.1_47608
+17:08:20:232  INFO 38599 --- [main] com.alibaba.nacos.common.remote.client   : [6b713ff3-e0c7-440b-958e-4da20a5c0330] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+17:08:20:232  INFO 38599 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [6b713ff3-e0c7-440b-958e-4da20a5c0330] Notify connected event to listeners.
+17:08:20:233  INFO 38599 --- [main] com.alibaba.nacos.common.remote.client   : [6b713ff3-e0c7-440b-958e-4da20a5c0330] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$1075/0x00007f4eb8839d30
+17:08:20:365  INFO 38599 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+17:08:20:378  INFO 38599 --- [main] o.s.c.a.n.registry.NacosServiceRegistry  : nacos registry, item-service 10.255.255.254:8081 register finished
+17:08:20:384  INFO 38599 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+17:08:20:387  INFO 38599 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+17:08:20:414  INFO 38599 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+17:08:20:553  INFO 38599 --- [main] c.f.itemservice.ItemServiceApplication   : Started ItemServiceApplication in 3.216 seconds (JVM running for 3.646)
+17:08:20:981  INFO 38599 --- [nacos-grpc-client-executor-15] com.alibaba.nacos.common.remote.client   : [6b713ff3-e0c7-440b-958e-4da20a5c0330] Receive server push request, request = NotifySubscriberRequest, requestId = 111
+17:08:20:982  INFO 38599 --- [nacos-grpc-client-executor-15] com.alibaba.nacos.common.remote.client   : [6b713ff3-e0c7-440b-958e-4da20a5c0330] Ack server push request, request = NotifySubscriberRequest, requestId = 111
+17:08:20:989  INFO 38599 --- [nacos-grpc-client-executor-16] com.alibaba.nacos.common.remote.client   : [6b713ff3-e0c7-440b-958e-4da20a5c0330] Receive server push request, request = NotifySubscriberRequest, requestId = 112
+17:08:20:995  INFO 38599 --- [nacos-grpc-client-executor-16] com.alibaba.nacos.common.remote.client   : [6b713ff3-e0c7-440b-958e-4da20a5c0330] Ack server push request, request = NotifySubscriberRequest, requestId = 112
+17:08:26:978  INFO 38599 --- [nacos-grpc-client-executor-23] com.alibaba.nacos.common.remote.client   : [6b713ff3-e0c7-440b-958e-4da20a5c0330] Receive server push request, request = NotifySubscriberRequest, requestId = 113
+17:08:26:979  INFO 38599 --- [nacos-grpc-client-executor-23] com.alibaba.nacos.common.remote.client   : [6b713ff3-e0c7-440b-958e-4da20a5c0330] Ack server push request, request = NotifySubscriberRequest, requestId = 113
+17:08:53:126  INFO 38599 --- [nacos-grpc-client-executor-36] com.alibaba.nacos.common.remote.client   : [6b713ff3-e0c7-440b-958e-4da20a5c0330] Receive server push request, request = NotifySubscriberRequest, requestId = 115
+17:08:53:127  INFO 38599 --- [nacos-grpc-client-executor-36] com.alibaba.nacos.common.remote.client   : [6b713ff3-e0c7-440b-958e-4da20a5c0330] Ack server push request, request = NotifySubscriberRequest, requestId = 115
+17:18:57:984  WARN 38599 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+17:18:57:984  WARN 38599 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+17:18:57:985  WARN 38599 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+17:18:57:985  WARN 38599 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+17:18:57:997  INFO 38599 --- [SpringApplicationShutdownHook] o.s.c.a.n.registry.NacosServiceRegistry  : De-registering from Nacos Server now...
+17:18:58:004  INFO 38599 --- [SpringApplicationShutdownHook] o.s.c.a.n.registry.NacosServiceRegistry  : De-registration finished.
+17:19:07:543  INFO 42350 --- [main] c.f.itemservice.ItemServiceApplication   : Starting ItemServiceApplication using Java 17.0.14 on ForeverCode with PID 42350 (/home/forevercode/projects/hmall/hmall/item-service/target/classes started by forevercode in /home/forevercode/projects/hmall/hmall)
+17:19:07:545  INFO 42350 --- [main] c.f.itemservice.ItemServiceApplication   : The following 1 profile is active: "local"
+17:19:08:122  INFO 42350 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+17:19:08:124  INFO 42350 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+17:19:08:136  INFO 42350 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
+17:19:08:293  INFO 42350 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=952cf9e3-1fdf-356c-9448-cf967e5f3ce4
+17:19:08:581  INFO 42350 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+17:19:08:587  INFO 42350 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+17:19:08:587  INFO 42350 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+17:19:08:651  INFO 42350 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+17:19:08:652  INFO 42350 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1072 ms
+17:19:09:093  WARN 42350 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+17:19:09:094  INFO 42350 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+17:19:09:097  WARN 42350 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+17:19:09:097  INFO 42350 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+17:19:09:270  INFO 42350 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+17:19:09:580  INFO 42350 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of d7a9a2c8-5a1d-4fe2-a30b-d68cf0e8e45b
+17:19:09:623  INFO 42350 --- [main] org.reflections.Reflections              : Reflections took 19 ms to scan 1 urls, producing 3 keys and 6 values 
+17:19:09:639  INFO 42350 --- [main] org.reflections.Reflections              : Reflections took 6 ms to scan 1 urls, producing 4 keys and 9 values 
+17:19:09:646  INFO 42350 --- [main] org.reflections.Reflections              : Reflections took 5 ms to scan 1 urls, producing 3 keys and 10 values 
+17:19:09:648  WARN 42350 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+17:19:09:652  INFO 42350 --- [main] org.reflections.Reflections              : Reflections took 3 ms to scan 1 urls, producing 1 keys and 5 values 
+17:19:09:658  INFO 42350 --- [main] org.reflections.Reflections              : Reflections took 3 ms to scan 1 urls, producing 1 keys and 7 values 
+17:19:09:665  INFO 42350 --- [main] org.reflections.Reflections              : Reflections took 6 ms to scan 1 urls, producing 2 keys and 8 values 
+17:19:09:667  WARN 42350 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+17:19:09:668  INFO 42350 --- [main] com.alibaba.nacos.common.remote.client   : [d7a9a2c8-5a1d-4fe2-a30b-d68cf0e8e45b] RpcClient init label, labels = {module=naming, source=sdk}
+17:19:09:670  INFO 42350 --- [main] com.alibaba.nacos.common.remote.client   : [d7a9a2c8-5a1d-4fe2-a30b-d68cf0e8e45b] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+17:19:09:670  INFO 42350 --- [main] com.alibaba.nacos.common.remote.client   : [d7a9a2c8-5a1d-4fe2-a30b-d68cf0e8e45b] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+17:19:09:670  INFO 42350 --- [main] com.alibaba.nacos.common.remote.client   : [d7a9a2c8-5a1d-4fe2-a30b-d68cf0e8e45b] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+17:19:09:672  INFO 42350 --- [main] com.alibaba.nacos.common.remote.client   : [d7a9a2c8-5a1d-4fe2-a30b-d68cf0e8e45b] Try to connect to server on start up, server: {serverIp = '172.23.131.195', server main port = 8848}
+17:19:10:109  INFO 42350 --- [main] com.alibaba.nacos.common.remote.client   : [d7a9a2c8-5a1d-4fe2-a30b-d68cf0e8e45b] Success to connect to server [172.23.131.195:8848] on start up, connectionId = 1742635149956_172.17.0.1_36414
+17:19:10:110  INFO 42350 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [d7a9a2c8-5a1d-4fe2-a30b-d68cf0e8e45b] Notify connected event to listeners.
+17:19:10:110  INFO 42350 --- [main] com.alibaba.nacos.common.remote.client   : [d7a9a2c8-5a1d-4fe2-a30b-d68cf0e8e45b] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+17:19:10:111  INFO 42350 --- [main] com.alibaba.nacos.common.remote.client   : [d7a9a2c8-5a1d-4fe2-a30b-d68cf0e8e45b] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$1075/0x00007fdaec83dc58
+17:19:10:228  INFO 42350 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+17:19:10:240  INFO 42350 --- [main] o.s.c.a.n.registry.NacosServiceRegistry  : nacos registry, item-service 10.255.255.254:8081 register finished
+17:19:10:246  INFO 42350 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+17:19:10:248  INFO 42350 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+17:19:10:275  INFO 42350 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+17:19:10:385  INFO 42350 --- [main] c.f.itemservice.ItemServiceApplication   : Started ItemServiceApplication in 3.166 seconds (JVM running for 3.56)
+17:19:10:791  INFO 42350 --- [nacos-grpc-client-executor-16] com.alibaba.nacos.common.remote.client   : [d7a9a2c8-5a1d-4fe2-a30b-d68cf0e8e45b] Receive server push request, request = NotifySubscriberRequest, requestId = 119
+17:19:10:791  INFO 42350 --- [nacos-grpc-client-executor-16] com.alibaba.nacos.common.remote.client   : [d7a9a2c8-5a1d-4fe2-a30b-d68cf0e8e45b] Ack server push request, request = NotifySubscriberRequest, requestId = 119
+17:19:10:798  INFO 42350 --- [nacos-grpc-client-executor-17] com.alibaba.nacos.common.remote.client   : [d7a9a2c8-5a1d-4fe2-a30b-d68cf0e8e45b] Receive server push request, request = NotifySubscriberRequest, requestId = 120
+17:19:10:800  INFO 42350 --- [nacos-grpc-client-executor-17] com.alibaba.nacos.common.remote.client   : [d7a9a2c8-5a1d-4fe2-a30b-d68cf0e8e45b] Ack server push request, request = NotifySubscriberRequest, requestId = 120
+17:19:16:789  INFO 42350 --- [nacos-grpc-client-executor-22] com.alibaba.nacos.common.remote.client   : [d7a9a2c8-5a1d-4fe2-a30b-d68cf0e8e45b] Receive server push request, request = NotifySubscriberRequest, requestId = 122
+17:19:16:790  INFO 42350 --- [nacos-grpc-client-executor-22] com.alibaba.nacos.common.remote.client   : [d7a9a2c8-5a1d-4fe2-a30b-d68cf0e8e45b] Ack server push request, request = NotifySubscriberRequest, requestId = 122
+17:19:25:938  WARN 42350 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+17:19:25:938  WARN 42350 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+17:19:25:939  WARN 42350 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+17:19:25:939  WARN 42350 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+17:19:25:956  INFO 42350 --- [SpringApplicationShutdownHook] o.s.c.a.n.registry.NacosServiceRegistry  : De-registering from Nacos Server now...
+17:19:25:965  INFO 42350 --- [SpringApplicationShutdownHook] o.s.c.a.n.registry.NacosServiceRegistry  : De-registration finished.

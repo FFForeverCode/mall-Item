@@ -6,32 +6,21 @@ import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.ffforever.cartservice.domain.dto.CartFormDTO;
-import com.ffforever.cartservice.domain.dto.ItemDTO;
 import com.ffforever.cartservice.domain.po.Cart;
 import com.ffforever.cartservice.domain.vo.CartVO;
 import com.ffforever.cartservice.mapper.CartMapper;
 import com.ffforever.cartservice.service.ICartService;
+import com.ffforever.hmapi.client.ItemClient;
+import com.ffforever.hmapi.dto.ItemDTO;
 import com.hmall.common.exception.BizIllegalException;
 import com.hmall.common.utils.BeanUtils;
 import com.hmall.common.utils.CollUtils;
 import com.hmall.common.utils.UserContext;
-import jdk.jfr.Name;
 import lombok.RequiredArgsConstructor;
-import lombok.Value;
-import org.apache.catalina.loader.WebappClassLoader;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Service;
-import org.springframework.web.reactive.function.client.WebClient;
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
 
 import javax.annotation.Resource;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.function.Function;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -47,8 +36,13 @@ import java.util.stream.Collectors;
 public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements ICartService {
 
     //private final IItemService itemService;
-    @Resource(name = "itemsWebClient")
-    WebClient webClient;
+    //@Resource(name = "itemsWebClient")
+    //WebClient webClient;
+
+    @Resource
+    private ItemClient itemClient;
+
+
 
 
     @Override
@@ -100,17 +94,12 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements IC
     private void handleCartItems(List<CartVO> vos) {
         Set<Long> itemIds = vos.stream().map(CartVO::getItemId).collect(Collectors.toSet());
         // 2.查询商品
-        Mono<List<ItemDTO>> items = getItems(itemIds);
-        List<ItemDTO> itemDTOList = items.block();//阻塞同步获取查询结果，如果使用异步查询将会导致更新vos失败
-        //因为异步相当于开启了一个新的线程用于查询操作，
-        // 无需等待查询结果，因此再查询时，就会执行下面的方法，
-        // 此时还未查到结果，因此会导致更新失败
-        if (CollUtils.isEmpty(itemDTOList)) {
-            return;
+        List<ItemDTO> itemDTOS = itemClient.queryItemByIds(new LinkedList<>(itemIds));
+        Map<Long, ItemDTO> itemMap = new HashMap<>();
+        for(ItemDTO itemDTO : itemDTOS){
+            Long id = itemDTO.getId();
+            itemMap.put(id, itemDTO);
         }
-        // 3.转为 id 到 item的map
-        Map<Long, ItemDTO> itemMap = itemDTOList.stream().collect(Collectors.toMap(ItemDTO::getId, Function.identity()));
-        // 4.写入vo
         for (CartVO v : vos) {
             ItemDTO item = itemMap.get(v.getItemId());
             if (item == null) {
@@ -128,23 +117,23 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements IC
      * @param itemIds 商品ids
      * @return 返回商品列表
      */
-    private Mono<List<ItemDTO>>getItems(Set<Long> itemIds){
-            String idsParam = itemIds.stream()
-                    .map(String::valueOf)
-                    .collect(Collectors.joining(",")); // 拼接成逗号分隔的字符串
-
-            return webClient.get()
-                    .uri(uriBuilder -> uriBuilder.path("/items") // 只写相对路径
-                            .queryParam("ids", idsParam)
-                            .build())
-                    .retrieve()
-                    .bodyToMono(new ParameterizedTypeReference<List<ItemDTO>>() {}) // 解析为 List<ItemDTO>
-                    .onErrorResume(e -> {
-                        System.err.println("查询商品失败：" + e.getMessage());
-                        return Mono.just(List.of()); // 失败时返回空列表，防止流中断
-                    });
-
-    }
+//    private Mono<List<ItemDTO>>getItems(Set<Long> itemIds){
+//            String idsParam = itemIds.stream()
+//                    .map(String::valueOf)
+//                    .collect(Collectors.joining(",")); // 拼接成逗号分隔的字符串
+//
+//            return webClient.get()
+//                    .uri(uriBuilder -> uriBuilder.path("/items") // 只写相对路径
+//                            .queryParam("ids", idsParam)
+//                            .build())
+//                    .retrieve()
+//                    .bodyToMono(new ParameterizedTypeReference<List<ItemDTO>>() {}) // 解析为 List<ItemDTO>
+//                    .onErrorResume(e -> {
+//                        System.err.println("查询商品失败：" + e.getMessage());
+//                        return Mono.just(List.of()); // 失败时返回空列表，防止流中断
+//                    });
+//
+//    }
 
     @Override
     public void removeByItemIds(Collection<Long> itemIds) {
